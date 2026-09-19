@@ -1,0 +1,382 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Tư vấn điện mặt trời mái nhà</title>
+<meta name="description" content="Tư vấn điện mặt trời mái nhà cho hộ gia đình, kinh doanh và nhà xưởng. Gọi 0916 85 85 66 để được khảo sát và báo giá.">
+<style>
+:root{
+  --primary:#f59e0b;
+  --primary-2:#f97316;
+  --dark:#0f172a;
+  --green:#0f766e;
+  --light:#fffaf0;
+  --muted:#64748b;
+  --line:#e2e8f0;
+  --radius:22px;
+  --shadow:0 18px 50px rgba(15,23,42,.14);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--dark);background:#fff}
+a{text-decoration:none;color:inherit}
+img{max-width:100%;display:block}
+.container{width:min(1160px,calc(100% - 32px));margin:auto}
+.topbar{background:#0b1220;color:#fff;font-size:14px}
+.topbar .container{display:flex;justify-content:space-between;gap:16px;padding:10px 0;align-items:center}
+.topbar a{font-weight:800;color:#fde68a}
+header{position:sticky;top:0;z-index:40;background:rgba(255,255,255,.96);backdrop-filter:blur(12px);border-bottom:1px solid rgba(226,232,240,.9)}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0;gap:20px}
+.logo-placeholder{width:220px;height:70px;border:2px dashed #cbd5e1;border-radius:14px;display:flex;align-items:center;justify-content:center;text-align:center;font-weight:900;color:#94a3b8;background:#f8fafc;line-height:1.2}
+nav{display:flex;gap:22px;font-weight:700;font-size:15px}
+.header-cta,.btn{border:0;cursor:pointer;background:linear-gradient(135deg,var(--primary),var(--primary-2));color:#111827;font-weight:900;border-radius:999px;padding:15px 24px;box-shadow:0 10px 25px rgba(249,115,22,.28);transition:.2s}
+.btn:hover,.header-cta:hover{transform:translateY(-2px)}
+.btn.dark{background:#0f172a;color:white;box-shadow:none}
+.hero{background:
+linear-gradient(90deg,rgba(7,18,33,.93),rgba(7,18,33,.68)),
+url('https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?auto=format&fit=crop&w=2000&q=85') center/cover;
+color:white;padding:84px 0 76px}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:44px;align-items:center}
+.eyebrow{display:inline-flex;gap:8px;align-items:center;padding:9px 14px;border-radius:999px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.18);font-weight:800;font-size:14px}
+.hero h1{font-size:clamp(38px,6vw,70px);line-height:.98;margin:18px 0}
+.hero h1 span{color:#fbbf24}
+.hero p{font-size:19px;line-height:1.7;color:#e2e8f0;max-width:720px}
+.hero-actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:28px}
+.hero-note{display:flex;gap:18px;flex-wrap:wrap;margin-top:26px;color:#dbeafe;font-size:14px;font-weight:700}
+.hero-card{background:rgba(255,255,255,.97);color:var(--dark);padding:28px;border-radius:28px;box-shadow:var(--shadow)}
+.hero-card h3{font-size:26px;margin:0 0 10px}
+.hero-card p{color:var(--muted);font-size:15px}
+.mini-list{display:grid;gap:12px;margin:20px 0}
+.mini-item{display:flex;gap:12px;align-items:flex-start;padding:13px 0;border-bottom:1px solid #eef2f7}
+.dot{width:28px;height:28px;border-radius:50%;display:grid;place-items:center;background:#fff7ed;color:#ea580c;font-weight:900;flex:0 0 auto}
+.section{padding:76px 0}
+.section.alt{background:#f8fafc}
+.center{text-align:center}
+.kicker{color:#ea580c;font-weight:900;letter-spacing:.08em;text-transform:uppercase;font-size:13px}
+h2{font-size:clamp(30px,4vw,48px);line-height:1.1;margin:10px 0 14px}
+.lead{font-size:18px;line-height:1.7;color:var(--muted);max-width:780px;margin:0 auto}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:38px}
+.card{background:white;border:1px solid var(--line);border-radius:var(--radius);padding:28px;box-shadow:0 12px 28px rgba(15,23,42,.06)}
+.icon{font-size:34px}
+.card h3{font-size:22px;margin:14px 0 8px}
+.card p{color:var(--muted);line-height:1.65;margin:0}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:38px}
+.step{position:relative;background:white;border-radius:20px;border:1px solid var(--line);padding:24px}
+.step b{display:inline-grid;place-items:center;width:40px;height:40px;border-radius:12px;background:#fff7ed;color:#ea580c;font-size:18px}
+.step h4{font-size:18px;margin:14px 0 8px}
+.step p{font-size:14px;color:var(--muted);line-height:1.6}
+.band{background:linear-gradient(135deg,#0f172a,#134e4a);color:white;border-radius:30px;padding:40px;display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center}
+.band h3{font-size:32px;margin:0 0 8px}
+.band p{margin:0;color:#cbd5e1}
+.calc{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:center}
+.calc-box{background:#0f172a;color:#fff;border-radius:28px;padding:32px}
+.calc-box h3{font-size:30px;margin-top:0}
+.range{margin:20px 0}
+.range label{display:flex;justify-content:space-between;font-weight:800;margin-bottom:8px}
+input[type="range"]{width:100%}
+.estimate{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:20px}
+.metric{background:#1e293b;border-radius:16px;padding:18px}
+.metric small{color:#94a3b8;display:block;margin-bottom:6px}
+.metric strong{font-size:23px;color:#fbbf24}
+.faq{max-width:860px;margin:34px auto 0}
+.faq details{background:#fff;border:1px solid var(--line);border-radius:16px;padding:18px 20px;margin-bottom:12px}
+.faq summary{font-weight:900;cursor:pointer}
+.faq p{color:var(--muted);line-height:1.65}
+footer{background:#07111f;color:#cbd5e1;padding:44px 0 90px}
+footer strong{color:white}
+.float-call{position:fixed;left:18px;bottom:18px;z-index:49;background:#16a34a;color:#fff;border-radius:999px;padding:15px 18px;font-weight:900;box-shadow:0 12px 30px rgba(22,163,74,.35)}
+.float-register{position:fixed;right:18px;bottom:18px;z-index:49}
+.modal{position:fixed;inset:0;background:rgba(2,6,23,.72);display:none;align-items:center;justify-content:center;padding:18px;z-index:100}
+.modal.open{display:flex}
+.modal-card{width:min(560px,100%);max-height:92vh;overflow:auto;background:white;border-radius:26px;padding:28px;position:relative;box-shadow:0 30px 80px rgba(0,0,0,.35)}
+.close{position:absolute;right:18px;top:14px;width:38px;height:38px;border:0;background:#f1f5f9;border-radius:50%;font-size:24px;cursor:pointer}
+.modal h3{font-size:30px;margin:4px 42px 8px 0}
+.modal p{color:var(--muted);line-height:1.6}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.field{display:flex;flex-direction:column;gap:7px}
+.field.full{grid-column:1/-1}
+label{font-weight:800;font-size:14px}
+input,select,textarea{width:100%;border:1px solid #cbd5e1;border-radius:13px;padding:13px 14px;font:inherit;outline:none}
+input:focus,select:focus,textarea:focus{border-color:#f59e0b;box-shadow:0 0 0 3px rgba(245,158,11,.12)}
+.form-submit{width:100%;margin-top:16px}
+.success{display:none;text-align:center;padding:24px 8px}
+.success .check{font-size:52px}
+.legal{font-size:12px;color:#94a3b8;margin-top:10px;line-height:1.5}
+@media(max-width:900px){
+  nav{display:none}
+  .hero-grid,.calc{grid-template-columns:1fr}
+  .grid-3{grid-template-columns:1fr 1fr}
+  .steps{grid-template-columns:1fr 1fr}
+  .band{grid-template-columns:1fr}
+  .hero{padding-top:58px}
+}
+@media(max-width:620px){
+  .topbar .container{flex-direction:column;align-items:flex-start}
+  .logo-placeholder{width:160px;height:52px;font-size:12px}
+  .header-cta{padding:12px 16px;font-size:13px}
+  .nav{gap:10px}
+  .grid-3,.steps,.form-grid,.estimate{grid-template-columns:1fr}
+  .field.full{grid-column:auto}
+  .hero{padding:46px 0}
+  .hero h1{font-size:42px}
+  .section{padding:58px 0}
+  .band{padding:28px}
+  .float-register .btn{padding:14px 16px}
+  .float-call{font-size:0;width:54px;height:54px;display:grid;place-items:center;padding:0}
+  .float-call:before{content:"☎";font-size:24px}
+}
+</style>
+</head>
+<body>
+<div class="topbar">
+  <div class="container">
+    <span>☀️ Tư vấn giải pháp điện mặt trời mái nhà cho hộ gia đình • kinh doanh • nhà xưởng</span>
+    <a href="tel:0916858566">Hotline: 0916 85 85 66</a>
+  </div>
+</div>
+
+<header>
+  <div class="container nav">
+    <div class="logo-placeholder">VỊ TRÍ LOGO<br>Thiết kế file 800×250px</div>
+    <nav>
+      <a href="#loi-ich">Lợi ích</a>
+      <a href="#quy-trinh">Quy trình</a>
+      <a href="#tinh-thu">Tính thử</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <button class="header-cta js-open-modal">ĐĂNG KÝ TƯ VẤN</button>
+  </div>
+</header>
+
+<main>
+<section class="hero">
+  <div class="container hero-grid">
+    <div>
+      <span class="eyebrow">⚡ TỐI ƯU CHI PHÍ ĐIỆN DÀI HẠN</span>
+      <h1>GIẢM TIỀN ĐIỆN BẰNG <span>ĐIỆN MẶT TRỜI MÁI NHÀ</span></h1>
+      <p>Phân tích hóa đơn điện, nhu cầu sử dụng và hiện trạng mái trước khi đề xuất công suất. Phù hợp mới triển khai, không ép khách chọn hệ quá lớn.</p>
+      <div class="hero-actions">
+        <button class="btn js-open-modal">NHẬN TƯ VẤN & BÁO GIÁ</button>
+        <a class="btn dark" href="tel:0916858566">GỌI 0916 85 85 66</a>
+      </div>
+      <div class="hero-note">
+        <span>✓ Tư vấn theo nhu cầu thực</span>
+        <span>✓ Khảo sát trước khi chốt cấu hình</span>
+        <span>✓ Có phương án cho nhà ở & kinh doanh</span>
+      </div>
+    </div>
+    <aside class="hero-card">
+      <h3>Đăng ký kiểm tra nhu cầu</h3>
+      <p>Chỉ cần vài thông tin cơ bản, chúng tôi sẽ tư vấn công suất phù hợp và phương án triển khai sơ bộ.</p>
+      <div class="mini-list">
+        <div class="mini-item"><span class="dot">1</span><div><strong>Gửi mức tiền điện</strong><br><small>Ước tính quy mô hệ phù hợp</small></div></div>
+        <div class="mini-item"><span class="dot">2</span><div><strong>Kiểm tra loại công trình</strong><br><small>Nhà ở, cửa hàng, nhà trọ, nhà xưởng...</small></div></div>
+        <div class="mini-item"><span class="dot">3</span><div><strong>Nhận tư vấn sơ bộ</strong><br><small>Trước khi sắp lịch khảo sát thực tế</small></div></div>
+      </div>
+      <button class="btn js-open-modal" style="width:100%">ĐĂNG KÝ NGAY</button>
+    </aside>
+  </div>
+</section>
+
+<section class="section" id="loi-ich">
+  <div class="container center">
+    <div class="kicker">Lợi ích chính</div>
+    <h2>Không chỉ là lắp pin lên mái</h2>
+    <p class="lead">Một hệ điện mặt trời tốt phải bắt đầu từ bài toán tải điện, mức sử dụng ban ngày, diện tích mái, cấu hình thiết bị và khả năng hoàn vốn.</p>
+    <div class="grid-3">
+      <article class="card"><div class="icon">💸</div><h3>Giảm chi phí điện</h3><p>Tăng tỷ lệ tự dùng điện vào ban ngày để giảm lượng điện mua từ lưới.</p></article>
+      <article class="card"><div class="icon">🏠</div><h3>Tận dụng mái sẵn có</h3><p>Biến phần mái trống thành khu vực tạo ra điện phục vụ sinh hoạt và kinh doanh.</p></article>
+      <article class="card"><div class="icon">📊</div><h3>Tính theo nhu cầu thực</h3><p>Không chọn công suất chỉ dựa trên cảm tính; tư vấn dựa trên hóa đơn và tải tiêu thụ.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="section alt" id="quy-trinh">
+  <div class="container center">
+    <div class="kicker">Quy trình</div>
+    <h2>4 bước để biết công trình có phù hợp hay không</h2>
+    <div class="steps">
+      <div class="step"><b>01</b><h4>Tiếp nhận thông tin</h4><p>Tiền điện, loại công trình, khu vực, thời gian dùng điện chính.</p></div>
+      <div class="step"><b>02</b><h4>Tư vấn sơ bộ</h4><p>Ước tính công suất và giải pháp phù hợp với mục tiêu sử dụng.</p></div>
+      <div class="step"><b>03</b><h4>Khảo sát thực tế</h4><p>Kiểm tra mái, hướng nắng, kết cấu và vị trí lắp thiết bị.</p></div>
+      <div class="step"><b>04</b><h4>Báo giá triển khai</h4><p>Chốt cấu hình, phạm vi thi công, tiến độ và điều kiện bảo hành.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="band">
+      <div>
+        <h3>Tiền điện đang từ 2 triệu/tháng trở lên?</h3>
+        <p>Đây là lúc đáng để tính thử bài toán điện mặt trời thay vì chỉ nhìn giá hệ thống.</p>
+      </div>
+      <button class="btn js-open-modal">TÍNH THỬ CHO TÔI</button>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="tinh-thu">
+  <div class="container calc">
+    <div>
+      <div class="kicker">Công cụ tham khảo</div>
+      <h2>Tính nhanh quy mô hệ thống sơ bộ</h2>
+      <p class="lead" style="margin:0">Công cụ này chỉ để sàng lọc ban đầu. Báo giá chính xác cần khảo sát hiện trạng và phân tích tải sử dụng thực tế.</p>
+      <div class="grid-3" style="grid-template-columns:1fr;margin-top:24px">
+        <div class="card"><strong>Phù hợp hơn khi:</strong><p>Điện dùng nhiều vào ban ngày, mái ít che bóng, công trình có nhu cầu sử dụng dài hạn.</p></div>
+      </div>
+    </div>
+    <div class="calc-box">
+      <h3>Ước tính nhanh</h3>
+      <div class="range">
+        <label><span>Tiền điện/tháng</span><span id="billText">5.000.000đ</span></label>
+        <input id="billRange" type="range" min="1000000" max="50000000" step="500000" value="5000000">
+      </div>
+      <div class="estimate">
+        <div class="metric"><small>Công suất tham khảo</small><strong id="kwText">5–7 kWp</strong></div>
+        <div class="metric"><small>Nhóm nhu cầu</small><strong id="segmentText">Nhà ở / KD nhỏ</strong></div>
+      </div>
+      <button class="btn js-open-modal" style="width:100%;margin-top:20px">NHẬN TƯ VẤN CHI TIẾT</button>
+    </div>
+  </div>
+</section>
+
+<section class="section alt" id="faq">
+  <div class="container center">
+    <div class="kicker">Câu hỏi thường gặp</div>
+    <h2>Những điều khách hàng thường hỏi trước khi lắp</h2>
+    <div class="faq">
+      <details><summary>Nhà tiền điện thấp có nên lắp không?</summary><p>Không phải trường hợp nào cũng cần lắp. Cần xem thêm mức sử dụng ban ngày, mục tiêu đầu tư và diện tích mái để đánh giá hiệu quả.</p></details>
+      <details><summary>Có bắt buộc phải dùng pin lưu trữ không?</summary><p>Không. Có thể tư vấn hệ hòa lưới hoặc hybrid tùy mục tiêu sử dụng điện, nhu cầu dự phòng và ngân sách.</p></details>
+      <details><summary>Báo giá online có chính xác không?</summary><p>Báo giá online chỉ là sơ bộ. Giá cuối cùng phụ thuộc cấu hình thiết bị, kết cấu mái, đường dây, tủ điện, vị trí lắp đặt và phạm vi thi công.</p></details>
+      <details><summary>Sau khi đăng ký thì quy trình thế nào?</summary><p>Nhân sự tư vấn sẽ liên hệ xác nhận nhu cầu, sàng lọc sơ bộ và hẹn khảo sát nếu công trình phù hợp.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container center">
+    <div class="kicker">Đăng ký tư vấn</div>
+    <h2>Gửi thông tin để được tư vấn phương án phù hợp</h2>
+    <p class="lead">Không cần biết trước mình phải lắp bao nhiêu kWp. Hãy để đội ngũ tư vấn tính từ nhu cầu sử dụng thực tế.</p>
+    <div style="margin-top:28px">
+      <button class="btn js-open-modal">MỞ FORM ĐĂNG KÝ</button>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="container">
+    <strong>Điện mặt trời mái nhà</strong><br>
+    Hotline: <a href="tel:0916858566"><strong>0916 85 85 66</strong></a><br>
+    <small>Thông tin trên landing page mang tính tư vấn sơ bộ. Cấu hình và báo giá chính thức được xác nhận sau khảo sát.</small>
+  </div>
+</footer>
+
+<a class="float-call" href="tel:0916858566">☎ Gọi ngay</a>
+<div class="float-register"><button class="btn js-open-modal">ĐĂNG KÝ</button></div>
+
+<div class="modal" id="leadModal" aria-hidden="true">
+  <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <button class="close" id="closeModal" aria-label="Đóng">×</button>
+    <div id="formWrap">
+      <h3 id="modalTitle">Đăng ký tư vấn điện mặt trời</h3>
+      <p>Điền thông tin bên dưới. Hệ thống hiện đang lưu form ở chế độ demo; điểm kết nối CRM/API đã được chừa sẵn để tích hợp ở phase sau.</p>
+      <form id="leadForm">
+        <div class="form-grid">
+          <div class="field full"><label for="name">Họ và tên *</label><input id="name" name="name" required autocomplete="name" placeholder="Nguyễn Văn A"></div>
+          <div class="field"><label for="phone">Số điện thoại *</label><input id="phone" name="phone" required inputmode="tel" autocomplete="tel" placeholder="09xxxxxxxx"></div>
+          <div class="field"><label for="area">Khu vực *</label><input id="area" name="area" required placeholder="TP.HCM / Đồng Nai..."></div>
+          <div class="field"><label for="property">Loại công trình</label>
+            <select id="property" name="property"><option>Nhà ở</option><option>Cửa hàng / Spa / Cafe</option><option>Nhà trọ</option><option>Văn phòng</option><option>Nhà xưởng</option><option>Khác</option></select>
+          </div>
+          <div class="field"><label for="bill">Tiền điện/tháng</label>
+            <select id="bill" name="bill"><option>Dưới 2 triệu</option><option>2–5 triệu</option><option>5–10 triệu</option><option>10–30 triệu</option><option>Trên 30 triệu</option></select>
+          </div>
+          <div class="field full"><label for="note">Nhu cầu thêm</label><textarea id="note" name="note" rows="3" placeholder="Ví dụ: dùng điện nhiều ban ngày, cần lưu trữ khi mất điện..."></textarea></div>
+        </div>
+        <input type="hidden" name="utm_source" id="utm_source">
+        <input type="hidden" name="utm_medium" id="utm_medium">
+        <input type="hidden" name="utm_campaign" id="utm_campaign">
+        <input type="hidden" name="utm_content" id="utm_content">
+        <input type="hidden" name="utm_term" id="utm_term">
+        <button class="btn form-submit" type="submit">GỬI ĐĂNG KÝ</button>
+        <div class="legal">Bằng việc gửi thông tin, khách hàng đồng ý để bộ phận tư vấn liên hệ về nhu cầu điện mặt trời.</div>
+      </form>
+    </div>
+    <div class="success" id="successBox">
+      <div class="check">✅</div>
+      <h3>Đã nhận thông tin</h3>
+      <p>Cảm ơn anh/chị. Bộ phận tư vấn sẽ liên hệ lại. Trường hợp cần trao đổi ngay, vui lòng gọi <a href="tel:0916858566"><strong>0916 85 85 66</strong></a>.</p>
+      <button class="btn" id="doneBtn">ĐÓNG</button>
+    </div>
+  </div>
+</div>
+
+<script>
+const modal=document.getElementById('leadModal');
+const openers=document.querySelectorAll('.js-open-modal');
+const closeBtn=document.getElementById('closeModal');
+const doneBtn=document.getElementById('doneBtn');
+const form=document.getElementById('leadForm');
+const formWrap=document.getElementById('formWrap');
+const successBox=document.getElementById('successBox');
+
+function openModal(){
+  modal.classList.add('open');
+  modal.setAttribute('aria-hidden','false');
+  document.body.style.overflow='hidden';
+  setTimeout(()=>document.getElementById('name').focus(),100);
+}
+function closeModal(){
+  modal.classList.remove('open');
+  modal.setAttribute('aria-hidden','true');
+  document.body.style.overflow='';
+}
+openers.forEach(btn=>btn.addEventListener('click',openModal));
+closeBtn.addEventListener('click',closeModal);
+doneBtn.addEventListener('click',closeModal);
+modal.addEventListener('click',e=>{if(e.target===modal) closeModal()});
+document.addEventListener('keydown',e=>{if(e.key==='Escape') closeModal()});
+
+const params=new URLSearchParams(location.search);
+['utm_source','utm_medium','utm_campaign','utm_content','utm_term'].forEach(k=>{
+  const el=document.getElementById(k);
+  if(el) el.value=params.get(k)||'';
+});
+
+form.addEventListener('submit',e=>{
+  e.preventDefault();
+  const phone=document.getElementById('phone').value.replace(/\s/g,'');
+  if(!/^(0|\+84)\d{9,10}$/.test(phone)){
+    alert('Vui lòng nhập số điện thoại hợp lệ.');
+    document.getElementById('phone').focus();
+    return;
+  }
+  const payload=Object.fromEntries(new FormData(form).entries());
+  localStorage.setItem('solar_lead_demo',JSON.stringify({...payload,created_at:new Date().toISOString()}));
+  // PHASE 2: POST payload đến CRM/API tại đây.
+  formWrap.style.display='none';
+  successBox.style.display='block';
+});
+
+const billRange=document.getElementById('billRange');
+const billText=document.getElementById('billText');
+const kwText=document.getElementById('kwText');
+const segmentText=document.getElementById('segmentText');
+function updateEstimate(){
+  const v=Number(billRange.value);
+  billText.textContent=v.toLocaleString('vi-VN')+'đ';
+  let kw='3–5 kWp', seg='Nhà ở nhỏ';
+  if(v>=3000000){kw='5–7 kWp';seg='Nhà ở / KD nhỏ'}
+  if(v>=7000000){kw='7–12 kWp';seg='Kinh doanh'}
+  if(v>=15000000){kw='12–30 kWp';seg='KD lớn / Nhà trọ'}
+  if(v>=30000000){kw='30 kWp+';seg='Nhà xưởng / DN'}
+  kwText.textContent=kw; segmentText.textContent=seg;
+}
+billRange.addEventListener('input',updateEstimate); updateEstimate();
+</script>
+</body>
+</html>

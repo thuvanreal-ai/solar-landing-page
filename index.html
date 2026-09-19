@@ -212,16 +212,89 @@ footer small{font-size:21px}
     line-height:1.4;
   }
 }
+
+/* Reference-image alignment */
+header{top:0;background:#fff}
+.nav{min-height:86px}
+.menu-toggle{display:none;border:0;background:transparent;color:#1f2937;font-size:34px;line-height:1;cursor:pointer;padding:8px}
+.hero{
+  background:
+    linear-gradient(90deg,rgba(255,255,255,.95) 0%,rgba(255,255,255,.72) 48%,rgba(255,255,255,.20) 100%),
+    url('https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?auto=format&fit=crop&w=2000&q=88') center/cover;
+}
+.hero-note{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:10px;
+  margin-top:24px;
+}
+.hero-note span{
+  min-height:86px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  color:#222!important;
+  background:rgba(255,253,245,.94);
+  border:1px solid #f5d675;
+  border-radius:18px;
+  padding:12px;
+  text-align:left;
+  font-weight:800;
+  line-height:1.25;
+}
+.hero-note span b{font-size:30px;color:#ffad00;line-height:1}
+.float-call{
+  width:68px;height:68px;padding:0;
+  display:grid;place-items:center;
+  font-size:30px;
+  background:#16b956;
+  border:6px solid #fff4c2;
+  box-shadow:0 0 0 7px rgba(255,190,0,.30),0 0 0 14px rgba(255,190,0,.13),0 10px 28px rgba(0,0,0,.22);
+  animation:callPulse 1.8s infinite;
+}
+.float-call .call-label{
+  position:absolute;left:-2px;top:64px;
+  white-space:nowrap;background:#252525;color:#fff;
+  font-size:14px;padding:4px 8px;border-radius:7px;
+}
+@keyframes callPulse{
+  0%,100%{box-shadow:0 0 0 7px rgba(255,190,0,.30),0 0 0 14px rgba(255,190,0,.13),0 10px 28px rgba(0,0,0,.22)}
+  50%{box-shadow:0 0 0 12px rgba(255,190,0,.20),0 0 0 22px rgba(255,190,0,.05),0 10px 28px rgba(0,0,0,.22)}
+}
+@media(max-width:900px){
+  .menu-toggle{display:block}
+  header nav{
+    display:none;position:absolute;left:14px;right:14px;top:84px;
+    background:#fff;border:1px solid #eee0b8;border-radius:16px;
+    padding:12px;box-shadow:0 16px 35px rgba(0,0,0,.14);
+    flex-direction:column;gap:0;
+  }
+  header nav.mobile-open{display:flex}
+  header nav a{padding:13px 10px;border-bottom:1px solid #f1ead8}
+  header nav a:last-child{border-bottom:0}
+}
+@media(max-width:620px){
+  .nav{min-height:74px;padding:9px 0}
+  .logo-placeholder{width:160px;height:58px}
+  .header-cta{margin-left:auto;padding:13px 14px}
+  .menu-toggle{font-size:31px;padding:5px}
+  .hero{
+    padding:26px 0 34px;
+    background:
+      linear-gradient(90deg,rgba(255,255,255,.95) 0%,rgba(255,255,255,.70) 53%,rgba(255,255,255,.12) 100%),
+      url('https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?auto=format&fit=crop&w=1400&q=88') center/cover;
+  }
+  .hero-grid{gap:22px}
+  .hero-note{grid-template-columns:repeat(3,1fr);gap:7px;margin-top:20px}
+  .hero-note span{min-height:94px;padding:9px 7px;border-radius:15px;font-size:16px!important;justify-content:flex-start}
+  .hero-note span b{font-size:26px}
+  .float-call{width:64px;height:64px;font-size:28px;left:14px;bottom:24px}
+  .float-register{right:14px;bottom:18px}
+}
 </style>
 </head>
 <body>
-<div class="topbar">
-  <div class="container">
-    <span>☀️ Tư vấn giải pháp điện mặt trời mái nhà cho hộ gia đình • kinh doanh • nhà xưởng</span>
-    <a href="tel:0916858566">Hotline: 0916 85 85 66</a>
-  </div>
-</div>
-
 <header>
   <div class="container nav">
     <div class="logo-placeholder">VỊ TRÍ LOGO<br>Thiết kế file 800×250px</div>
@@ -232,6 +305,7 @@ footer small{font-size:21px}
       <a href="#faq">FAQ</a>
     </nav>
     <button class="header-cta js-open-modal">ĐĂNG KÝ TƯ VẤN</button>
+    <button class="menu-toggle" id="menuToggle" aria-label="Mở menu" aria-expanded="false">☰</button>
   </div>
 </header>
 
@@ -247,9 +321,9 @@ footer small{font-size:21px}
         <a class="btn dark" href="tel:0916858566">GỌI 0916 85 85 66</a>
       </div>
       <div class="hero-note">
-        <span>✓ Tư vấn theo nhu cầu thực</span>
-        <span>✓ Khảo sát trước khi chốt cấu hình</span>
-        <span>✓ Có phương án cho nhà ở & kinh doanh</span>
+        <span><b>✓</b> Tư vấn theo<br>nhu cầu thực</span>
+        <span><b>⌕</b> Khảo sát trước<br>khi chốt cấu hình</span>
+        <span><b>⌂</b> Có phương án<br>cho nhà ở & kinh doanh</span>
       </div>
     </div>
     <aside class="hero-card">
@@ -361,7 +435,7 @@ footer small{font-size:21px}
   </div>
 </footer>
 
-<a class="float-call" href="tel:0916858566">☎ Gọi ngay</a>
+<a class="float-call" href="tel:0916858566">📞<span class="call-label">Gọi ngay</span></a>
 <div class="float-register"><button class="btn js-open-modal">ĐĂNG KÝ</button></div>
 
 <div class="modal" id="leadModal" aria-hidden="true">
@@ -369,7 +443,7 @@ footer small{font-size:21px}
     <button class="close" id="closeModal" aria-label="Đóng">×</button>
     <div id="formWrap">
       <h3 id="modalTitle">Đăng ký tư vấn điện mặt trời</h3>
-      <p>Điền thông tin bên dưới. Hệ thống hiện đang lưu form ở chế độ demo; điểm kết nối CRM/API đã được chừa sẵn để tích hợp ở phase sau.</p>
+      <p>Chỉ cần vài thông tin cơ bản, chúng tôi sẽ tư vấn công suất phù hợp và phương án triển khai sơ bộ.</p>
       <form id="leadForm">
         <div class="form-grid">
           <div class="field full"><label for="name">Họ và tên *</label><input id="name" name="name" required autocomplete="name" placeholder="Nguyễn Văn A"></div>
@@ -403,6 +477,20 @@ footer small{font-size:21px}
 
 <script>
 const modal=document.getElementById('leadModal');
+const menuToggle=document.getElementById('menuToggle');
+const mainNav=document.querySelector('header nav');
+if(menuToggle && mainNav){
+  menuToggle.addEventListener('click',()=>{
+    const isOpen=mainNav.classList.toggle('mobile-open');
+    menuToggle.setAttribute('aria-expanded',String(isOpen));
+    menuToggle.textContent=isOpen?'×':'☰';
+  });
+  mainNav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{
+    mainNav.classList.remove('mobile-open');
+    menuToggle.setAttribute('aria-expanded','false');
+    menuToggle.textContent='☰';
+  }));
+}
 const openers=document.querySelectorAll('.js-open-modal');
 const closeBtn=document.getElementById('closeModal');
 const doneBtn=document.getElementById('doneBtn');

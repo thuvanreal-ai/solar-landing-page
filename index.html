@@ -19,7 +19,7 @@
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0;font-family:Arial,"Helvetica Neue",Helvetica,sans-serif;color:var(--dark);background:#fff;font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+body{margin:0;font-family:Arial,sans-serif;color:var(--dark);background:#fff;font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
 a{text-decoration:none;color:inherit}
 img{max-width:100%;display:block}
 .container{width:min(1180px,calc(100% - 28px));margin:auto}
@@ -359,6 +359,52 @@ header{top:0;background:#fff}
 @media(prefers-reduced-motion:reduce){
   .sun-orb,.moon-orb,.energy-line,.energy-dot,.energy-battery i,.header-cta:after,.btn:after,.float-register .btn,.float-call{animation:none!important}
 }
+
+/* Final typography + form pass */
+html,body,button,input,select,textarea,*{font-family:Arial,sans-serif!important}
+body{font-size:19px}
+.topbar{font-size:19px}
+nav{font-size:19px}
+.header-cta,.btn{font-size:16px}
+.eyebrow{font-size:19px}
+.hero h1{font-size:clamp(42px,5.2vw,64px)}
+.hero p{font-size:20px}
+.hero-note{font-size:19px}
+.hero-card h3{font-size:28px}
+.hero-card p{font-size:19px}
+.kicker{font-size:19px}
+h2{font-size:clamp(32px,3.8vw,46px)}
+.lead{font-size:20px}
+.card h3{font-size:23px}
+.card p{font-size:19px}
+.step h4{font-size:20px}
+.step p{font-size:19px}
+.band h3{font-size:34px}
+.calc-box h3{font-size:32px}
+.metric strong{font-size:25px}
+.faq summary{font-size:20px}
+.faq p{font-size:19px}
+label{font-size:19px}
+input,select,textarea{font-size:19px}
+.legal{font-size:19px}
+small,.metric small,footer small{font-size:19px}
+.money-input{position:relative}
+.money-input input{padding-right:78px}
+.money-input span{
+ position:absolute;right:18px;top:50%;transform:translateY(-50%);
+ color:#666;font-size:18px;font-weight:700;pointer-events:none
+}
+.modal-card{width:min(720px,100%)}
+.modal h3{margin-bottom:20px}
+@media(max-width:620px){
+ body{font-size:19px}
+ .header-cta{font-size:16px}
+ .topbar{font-size:18px}
+ .hero h1{font-size:40px}
+ .eyebrow,.hero-note,.kicker,.hero-card p,.card p,.step p,.faq p,label,input,select,textarea,.legal,small,.metric small,footer small{font-size:19px}
+ .modal-card{padding:22px 18px}
+ .modal h3{font-size:28px;line-height:1.15;margin-bottom:18px}
+}
 </style>
 </head>
 <body>
@@ -410,7 +456,7 @@ header{top:0;background:#fff}
     </div>
     <aside class="hero-card">
       <h3>Đăng ký kiểm tra nhu cầu</h3>
-      <p>Chỉ cần vài thông tin cơ bản, chúng tôi sẽ tư vấn công suất phù hợp và phương án triển khai sơ bộ.</p>
+      
       <div class="mini-list">
         <div class="mini-item"><span class="dot">1</span><div><strong>Gửi mức tiền điện</strong><br><small>Ước tính quy mô hệ phù hợp</small></div></div>
         <div class="mini-item"><span class="dot">2</span><div><strong>Kiểm tra loại công trình</strong><br><small>Nhà ở, cửa hàng, nhà trọ, nhà xưởng...</small></div></div>
@@ -530,14 +576,10 @@ header{top:0;background:#fff}
         <div class="form-grid">
           <div class="field full"><label for="name">Họ và tên *</label><input id="name" name="name" required autocomplete="name" placeholder="Nguyễn Văn A"></div>
           <div class="field"><label for="phone">Số điện thoại *</label><input id="phone" name="phone" required inputmode="tel" autocomplete="tel" placeholder="09xxxxxxxx"></div>
-          <div class="field"><label for="area">Khu vực *</label><input id="area" name="area" required placeholder="TP.HCM / Đồng Nai..."></div>
-          <div class="field"><label for="property">Loại công trình</label>
-            <select id="property" name="property"><option>Nhà ở</option><option>Cửa hàng / Spa / Cafe</option><option>Nhà trọ</option><option>Văn phòng</option><option>Nhà xưởng</option><option>Khác</option></select>
+          <div class="field full"><label for="area">Địa chỉ lắp đặt *</label><input id="area" name="area" required placeholder="Số nhà, đường, phường/xã, tỉnh/thành"></div>
+          <div class="field full"><label for="bill">Hóa đơn TB/tháng</label>
+            <div class="money-input"><input id="bill" name="bill" inputmode="numeric" placeholder="Ví dụ: 3.000.000"><span>VND</span></div>
           </div>
-          <div class="field"><label for="bill">Tiền điện/tháng</label>
-            <select id="bill" name="bill"><option>Dưới 2 triệu</option><option>2–5 triệu</option><option>5–10 triệu</option><option>10–30 triệu</option><option>Trên 30 triệu</option></select>
-          </div>
-          <div class="field full"><label for="note">Nhu cầu thêm</label><textarea id="note" name="note" rows="3" placeholder="Ví dụ: dùng điện nhiều ban ngày, cần lưu trữ khi mất điện..."></textarea></div>
         </div>
         <input type="hidden" name="utm_source" id="utm_source">
         <input type="hidden" name="utm_medium" id="utm_medium">

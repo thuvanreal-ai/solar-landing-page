@@ -192,6 +192,26 @@ footer small{font-size:21px}
   .hero h1{font-size:42px}
   .eyebrow,.hero-note,.kicker,.hero-card p,.card p,.step p,.faq p,label,input,select,textarea,.legal,small,.metric small,footer small{font-size:21px}
 }
+
+/* Contrast fix for hero benefit checklist */
+.hero-note span{
+  color:#2f3437 !important;
+  background:rgba(255,255,255,.90);
+  border:1px solid rgba(255,191,0,.45);
+  border-radius:12px;
+  padding:9px 12px;
+  text-shadow:none;
+}
+@media(max-width:620px){
+  .hero-note{display:grid;grid-template-columns:1fr;gap:8px;margin-top:16px}
+  .hero-note span{
+    color:#252525 !important;
+    background:#fffdf5;
+    border-color:#ffd35a;
+    padding:10px 12px;
+    line-height:1.4;
+  }
+}
 </style>
 </head>
 <body>

@@ -292,6 +292,73 @@ header{top:0;background:#fff}
   .float-call{width:64px;height:64px;font-size:28px;left:14px;bottom:24px}
   .float-register{right:14px;bottom:18px}
 }
+
+/* Animated solar story: daylight -> storage -> evening usage */
+.hero{position:relative;overflow:hidden;isolation:isolate}
+.hero>.container{position:relative;z-index:3}
+.hero:before{
+  content:"";position:absolute;inset:0;z-index:1;pointer-events:none;
+  background:linear-gradient(180deg,rgba(15,23,42,0) 0%,rgba(15,23,42,.05) 65%,rgba(15,23,42,.14) 100%);
+  animation:dayNightTint 12s ease-in-out infinite;
+}
+.solar-scene{position:absolute;inset:0;z-index:2;pointer-events:none;overflow:hidden}
+.sun-orb,.moon-orb{
+  position:absolute;right:9%;top:8%;width:58px;height:58px;border-radius:50%;
+  display:grid;place-items:center;font-size:36px;
+}
+.sun-orb{color:#ffb000;filter:drop-shadow(0 0 18px rgba(255,185,0,.7));animation:sunCycle 12s ease-in-out infinite}
+.moon-orb{color:#fff;opacity:0;filter:drop-shadow(0 0 12px rgba(255,255,255,.55));animation:moonCycle 12s ease-in-out infinite}
+.energy-map{position:absolute;inset:0;width:100%;height:100%;opacity:.92}
+.energy-line{fill:none;stroke:#24d36b;stroke-width:4;stroke-linecap:round;stroke-dasharray:10 12;filter:drop-shadow(0 0 5px rgba(36,211,107,.75));animation:energyDash 1.2s linear infinite}
+.energy-dot{fill:#fff;stroke:#24d36b;stroke-width:4;filter:drop-shadow(0 0 7px rgba(36,211,107,.9))}
+.dot-a{offset-path:path("M760 110 C700 160 680 205 620 240 S520 315 470 350");animation:flowA 3.1s linear infinite}
+.dot-b{offset-path:path("M470 350 C405 365 355 390 300 430");animation:flowB 2.4s linear infinite .5s}
+.dot-c{offset-path:path("M470 350 C540 365 590 390 650 430");animation:flowC 2.6s linear infinite 1s}
+.energy-battery{
+  position:absolute;left:44%;top:64%;width:46px;height:66px;border:3px solid #20b95c;border-radius:9px;
+  background:rgba(255,255,255,.88);display:grid;place-items:center;color:#16a34a;font-size:23px;
+  box-shadow:0 0 16px rgba(36,211,107,.38)
+}
+.energy-battery:before{content:"";position:absolute;top:-8px;width:18px;height:6px;border-radius:3px;background:#20b95c}
+.energy-battery i{position:absolute;left:4px;right:4px;bottom:4px;height:8px;border-radius:4px;background:#31d56f;animation:charge 6s ease-in-out infinite;z-index:-1}
+.energy-load{position:absolute;top:79%;width:42px;height:42px;border-radius:50%;display:grid;place-items:center;background:rgba(255,255,255,.92);border:2px solid #ffb000;color:#d97706;font-weight:900;box-shadow:0 0 12px rgba(255,176,0,.35)}
+.load-1{left:27%}.load-2{left:63%}
+
+.header-cta,.btn{position:relative;overflow:hidden;isolation:isolate}
+.header-cta:after,.btn:after{
+  content:"";position:absolute;top:-40%;bottom:-40%;width:38px;left:-60px;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.72),transparent);
+  transform:rotate(18deg);animation:ctaShine 2.7s ease-in-out infinite;z-index:-1
+}
+.float-register .btn{animation:ctaBreath 1.8s ease-in-out infinite}
+@keyframes dayNightTint{
+  0%,38%,100%{background:rgba(255,255,255,0)}
+  60%,78%{background:rgba(8,20,45,.30)}
+}
+@keyframes sunCycle{0%,35%,100%{opacity:1;transform:translate(0,0) scale(1)}60%,78%{opacity:0;transform:translate(-90px,65px) scale(.7)}}
+@keyframes moonCycle{0%,35%,100%{opacity:0;transform:translate(60px,-20px)}60%,78%{opacity:1;transform:translate(0,0)}}
+@keyframes energyDash{to{stroke-dashoffset:-44}}
+@keyframes flowA{from{offset-distance:0%}to{offset-distance:100%}}
+@keyframes flowB{from{offset-distance:0%}to{offset-distance:100%}}
+@keyframes flowC{from{offset-distance:0%}to{offset-distance:100%}}
+@keyframes charge{0%,100%{height:8px}45%{height:52px}70%{height:44px}}
+@keyframes ctaShine{0%,52%{left:-60px}78%,100%{left:120%}}
+@keyframes ctaBreath{0%,100%{transform:scale(1);box-shadow:0 10px 25px rgba(255,170,0,.28)}50%{transform:scale(1.045);box-shadow:0 12px 34px rgba(255,170,0,.48)}}
+
+@media(max-width:900px){
+  .energy-battery{left:47%;top:66%}
+}
+@media(max-width:620px){
+  .solar-scene{opacity:.78}
+  .energy-map{height:72%;top:8%}
+  .sun-orb,.moon-orb{right:7%;top:5%;width:44px;height:44px;font-size:28px}
+  .energy-battery{left:auto;right:18%;top:55%;width:36px;height:52px;font-size:18px}
+  .energy-load{display:none}
+  .hero>.container{z-index:4}
+}
+@media(prefers-reduced-motion:reduce){
+  .sun-orb,.moon-orb,.energy-line,.energy-dot,.energy-battery i,.header-cta:after,.btn:after,.float-register .btn,.float-call{animation:none!important}
+}
 </style>
 </head>
 <body>
@@ -311,6 +378,21 @@ header{top:0;background:#fff}
 
 <main>
 <section class="hero">
+  <div class="solar-scene" aria-hidden="true">
+    <div class="sun-orb">☀</div>
+    <div class="moon-orb">☾</div>
+    <svg class="energy-map" viewBox="0 0 1000 520" preserveAspectRatio="none">
+      <path class="energy-line line-a" d="M760 110 C700 160 680 205 620 240 S520 315 470 350"/>
+      <path class="energy-line line-b" d="M470 350 C405 365 355 390 300 430"/>
+      <path class="energy-line line-c" d="M470 350 C540 365 590 390 650 430"/>
+      <circle class="energy-dot dot-a" r="7"/>
+      <circle class="energy-dot dot-b" r="7"/>
+      <circle class="energy-dot dot-c" r="7"/>
+    </svg>
+    <div class="energy-battery"><span>⚡</span><i></i></div>
+    <div class="energy-load load-1">⌂</div>
+    <div class="energy-load load-2">●</div>
+  </div>
   <div class="container hero-grid">
     <div>
       <span class="eyebrow">⚡ TỐI ƯU CHI PHÍ ĐIỆN DÀI HẠN</span>

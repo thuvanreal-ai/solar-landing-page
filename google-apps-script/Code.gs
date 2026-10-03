@@ -49,14 +49,15 @@ function doPost(e) {
 }
 
 function getSolarRange_(bill) {
-  if (bill < 1500000) return '3–5 kWp';
-  if (bill < 3000000) return '5–10 kWp';
-  if (bill < 6000000) return '10–20 kWp';
-  if (bill < 12000000) return '20–30 kWp';
-  return '30–50+ kWp';
+  if (bill <= 1500000) return 'Khoảng 2–4 kWp';
+  if (bill <= 3000000) return 'Khoảng 3–6 kWp';
+  if (bill <= 6000000) return 'Khoảng 5–10 kWp';
+  if (bill <= 10000000) return 'Khoảng 8–15 kWp';
+  if (bill <= 20000000) return 'Khoảng 12–30 kWp';
+  return 'Cần phân tích tải để xác định công suất';
 }
 
 function testWrite() {
   const sheet = SpreadsheetApp.openById(SPREADSHEET_ID).getSheetByName(SHEET_NAME);
-  sheet.appendRow([new Date(),'TEST FORM','0916858566',5000000,'Nhà ở','Cả ngày','10–20 kWp','Mới','Test Apps Script','Xóa dòng test sau khi kiểm tra']);
+  sheet.appendRow([new Date(),'TEST FORM','0916858566',5000000,'Nhà ở','Cả ngày','Khoảng 5–10 kWp','Mới','Test Apps Script','Xóa dòng test sau khi kiểm tra']);
 }

@@ -28,7 +28,7 @@ function doPost(e) {
     sheet.appendRow([
       new Date(),
       String(p.name || '').trim(),
-      phone,
+      "'" + phone,
       monthlyBill,
       String(p.propertyType || '').trim(),
       String(p.usageTime || '').trim(),

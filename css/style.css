@@ -206,3 +206,67 @@
   .mobile-bar{gap:8px}
   .mobile-bar a{font-size:14px;padding:12px 8px}
 }
+
+/* MOBILE V4 — final desktop/mobile typography parity audit 2026-10-03
+   Rule: mobile body/copy text must never be smaller than the approved desktop readability scale. */
+@media (max-width:640px){
+  /* Header parity */
+  .brand strong{font-size:18px}
+  .brand small{font-size:13px}
+
+  /* Hero parity */
+  .eyebrow{font-size:13px}
+  .hero-points b{font-size:15px}
+  .hero-points span{font-size:17px}
+  .microcopy{font-size:15px}
+
+  /* Solar Check — exact approved 18px scale */
+  .lead-card .card-kicker{font-size:18px}
+  .lead-card>p{font-size:18px}
+  .lead-card label,.lead-card legend{font-size:18px}
+  .lead-card input,.lead-card select{font-size:18px}
+  .lead-card .money-input span{font-size:18px}
+  .lead-card .quick-values button{font-size:18px}
+  .lead-card .btn-full,.lead-card .step-actions .btn{font-size:18px}
+
+  /* Trust + labels parity */
+  .trust-grid strong{font-size:17px}
+  .trust-grid span{font-size:15px}
+  .section-kicker{font-size:14px}
+
+  /* Analysis cards parity */
+  .factor-grid span{font-size:14px}
+  .factor-grid h3{font-size:20px}
+  .factor-grid p{font-size:16px}
+
+  /* Solution cards parity */
+  .section-head>p{font-size:18px}
+  .solution-grid .tag{font-size:13px}
+  .solution-grid h3{font-size:27px}
+  .solution-grid p,.solution-grid li{font-size:16px}
+
+  /* Process parity */
+  .process b{font-size:14px}
+  .process h3{font-size:18px}
+  .process p{font-size:15px}
+
+  /* Cost parity */
+  .cost-list span{font-size:13px}
+  .cost-list b{font-size:16px}
+  .cost-list small{font-size:15px}
+
+  /* FAQ parity */
+  .faq-wrap>div:first-child>p{font-size:17px}
+  .faq-list summary{font-size:17px}
+  .faq-list p{font-size:15px}
+
+  /* Final CTA parity */
+  .final-card p{font-size:17px}
+
+  /* Footer parity */
+  .footer-brand strong{font-size:18px}
+  .footer-brand small{font-size:13px}
+  .footer-grid p,.footer-grid a{font-size:14px}
+  .footer-grid h3{font-size:16px}
+  .copyright{font-size:13px}
+}

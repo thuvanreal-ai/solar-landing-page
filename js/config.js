@@ -4,6 +4,6 @@ window.SOLAR_CONFIG = {
   phoneHref: '0916858566',
   zaloUrl: 'https://zalo.me/0916858566',
   serviceArea: 'TP.HCM & khu vực triển khai',
-  leadEndpoint: '',
+  leadEndpoint: 'https://script.google.com/macros/s/AKfycbyO9agjM7F_yXO19LvwmlLwk6eo_mqeRUoJ563SazSNAV08wnOWXTia7wM49tOEArv7JQ/exec',
   analytics: { ga4Id: '', googleAdsId: '', googleAdsLeadLabel: '' }
 };

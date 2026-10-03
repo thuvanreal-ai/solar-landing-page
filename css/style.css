@@ -97,3 +97,112 @@
   .lead-card .step-actions .btn,
   .lead-card .btn-full{font-size:18px}
 }
+
+/* MOBILE V3 — typography parity + spacing/layout audit 2026-10-03 */
+@media (max-width:640px){
+  body{font-size:16px}
+  .container{width:min(100% - 32px,1180px)}
+  .site-header .nav-wrap{height:68px}
+  .brand-mark{width:40px;height:40px;font-size:21px}
+  .brand strong{font-size:16px}
+  .brand small{display:block;font-size:11px}
+  .nav-actions{display:none}
+
+  .hero{padding:34px 0 52px}
+  .hero-grid{gap:30px}
+  .hero-copy{text-align:left}
+  .eyebrow{justify-content:flex-start;font-size:12px;line-height:1.5}
+  .hero h1{font-size:clamp(36px,10.5vw,46px);line-height:1.04;margin:15px 0 18px}
+  .hero-lead{font-size:17px;line-height:1.65}
+  .hero-points{margin:22px 0}
+  .hero-points div{padding:11px 0}
+  .hero-points b{font-size:15px}
+  .hero-points span{font-size:16px;line-height:1.55}
+  .hero-actions{margin-top:20px}
+  .hero-actions .btn{font-size:16px;padding:16px 18px}
+  .text-link{font-size:15px}
+  .microcopy{font-size:15px;line-height:1.55;margin-top:14px}
+
+  .lead-card{padding:24px 20px;border-radius:20px}
+  .lead-card .card-kicker{font-size:14px;line-height:1.4;padding:7px 10px}
+  .lead-card h2{font-size:28px;line-height:1.2;margin:14px 0 10px}
+  .lead-card>p{font-size:18px;line-height:1.6;margin-bottom:22px}
+  .lead-card label,.lead-card legend{font-size:18px;line-height:1.45}
+  .lead-card input,.lead-card select{font-size:18px;padding:15px 14px;min-height:54px}
+  .lead-card .money-input span{font-size:18px;right:14px}
+  .quick-values{grid-template-columns:1fr 1fr;gap:9px;margin:10px 0 18px}
+  .lead-card .quick-values button{font-size:18px;padding:12px 6px;min-height:48px}
+  .lead-card .btn-full,.lead-card .step-actions .btn{font-size:18px;min-height:54px}
+  .choice-grid{grid-template-columns:1fr;gap:9px}
+  .choice-grid span{min-height:64px;font-size:22px}
+  .choice-grid b{font-size:15px}
+  .step-actions{grid-template-columns:1fr;gap:9px}
+  .pre-result{padding:16px}
+  .result-label{font-size:12px}
+  .pre-result h3{font-size:19px}
+  .result-row{font-size:14px;line-height:1.5}
+  .pre-result p,.pre-result small{font-size:14px}
+  .divider{font-size:12px}
+  .field-note,.privacy-note{font-size:13px}
+  .form-status{font-size:13px}
+
+  .trust-grid div{padding:19px 0}
+  .trust-grid strong{font-size:17px}
+  .trust-grid span{font-size:15px;line-height:1.55}
+
+  .section{padding:58px 0}
+  .section-kicker{font-size:13px;line-height:1.5}
+  .section h2,.section-dark h2{font-size:34px;line-height:1.12}
+  .section p{font-size:16px;line-height:1.65}
+  .split{gap:32px}
+  .factor-grid{gap:12px}
+  .factor-grid article{padding:21px}
+  .factor-grid span{font-size:14px}
+  .factor-grid h3{font-size:20px}
+  .factor-grid p{font-size:16px;line-height:1.6}
+
+  .section-head{margin-bottom:28px}
+  .section-head>p{font-size:16px;line-height:1.65}
+  .solution-grid{gap:13px}
+  .solution-grid article{padding:23px}
+  .solution-grid .tag{font-size:13px}
+  .solution-grid h3{font-size:26px}
+  .solution-grid p,.solution-grid li{font-size:16px;line-height:1.65}
+  .badge{font-size:11px}
+
+  .process{grid-template-columns:1fr;gap:0}
+  .process div{padding:17px 8px 20px 20px;border-top:1px solid var(--line);border-left:2px solid var(--line)}
+  .process div:before{top:22px;left:-5px}
+  .process b{font-size:14px}
+  .process h3{font-size:18px;margin:5px 0}
+  .process p{font-size:15px;line-height:1.6}
+
+  .section-dark{padding:58px 0}
+  .cost-grid{gap:32px}
+  .section-dark p{font-size:16px;line-height:1.65}
+  .cost-list div{grid-template-columns:30px 1fr;padding:16px 0}
+  .cost-list span{font-size:13px}
+  .cost-list b{font-size:16px}
+  .cost-list small{grid-column:2;font-size:15px;line-height:1.55}
+
+  .faq-wrap{gap:28px}
+  .faq-wrap>div:first-child>p{font-size:16px;line-height:1.65}
+  .faq-list details{padding:18px 0}
+  .faq-list summary{font-size:17px;line-height:1.5;padding-right:8px}
+  .faq-list p{font-size:15px;line-height:1.65;padding-right:0}
+
+  .final-cta{padding:0 0 58px}
+  .final-card{padding:28px 22px;border-radius:20px}
+  .final-card h2{font-size:30px;line-height:1.12}
+  .final-card p{font-size:16px;line-height:1.65}
+  .final-card .btn{font-size:16px;padding:15px 18px}
+
+  footer{padding:42px 0 88px}
+  .footer-brand strong{font-size:17px}
+  .footer-brand small{font-size:12px}
+  .footer-grid p,.footer-grid a{font-size:14px;line-height:1.65}
+  .footer-grid h3{font-size:16px}
+  .copyright{font-size:12px}
+  .mobile-bar{gap:8px}
+  .mobile-bar a{font-size:14px;padding:12px 8px}
+}

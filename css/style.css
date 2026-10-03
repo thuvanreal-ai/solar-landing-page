@@ -315,21 +315,3 @@
     font-size:15px;font-weight:900
   }
 }
-/* VISUAL STORYTELLING V1 — bill-first educational journey */
-.visual-intro{padding:72px 0;background:#fff}
-.visual-intro-grid,.diy-grid{display:grid;grid-template-columns:.86fr 1.14fr;gap:48px;align-items:center}
-.visual-intro h2,.diy-section h2{font-size:clamp(30px,4vw,48px);line-height:1.12;letter-spacing:-.035em;color:var(--navy);margin:10px 0 18px}
-.visual-intro h2 em,.diy-section h2 em{font-style:normal;color:var(--orange)}
-.visual-intro p,.diy-section p{color:var(--muted);font-size:17px;line-height:1.7}
-.story-visual{margin:0;border-radius:26px;overflow:hidden;box-shadow:0 24px 70px rgba(2,47,73,.13);background:#fff}
-.story-visual img{display:block;width:100%;height:auto}
-.visual-break{padding:0 0 82px;background:#fff}
-.story-visual.wide{max-width:1040px;margin:0 auto}
-.visual-caption{max-width:820px;margin:18px auto 0;text-align:center;color:var(--muted);font-size:15px;line-height:1.65}
-.energy-path{max-width:960px;margin:0 auto 42px;box-shadow:0 18px 55px rgba(2,47,73,.09);border:1px solid var(--line)}
-.diy-section{background:linear-gradient(180deg,#fff 0,#f8fafc 100%)}
-.diy-grid{grid-template-columns:.82fr 1.18fr}
-.diy-checks{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin:22px 0 26px}
-.diy-checks span{padding:10px 12px;border-radius:10px;background:#ecfdf5;color:#0f766e;font-size:14px;font-weight:700}
-@media(max-width:900px){.visual-intro-grid,.diy-grid{grid-template-columns:1fr}.visual-intro-copy{order:0}.story-visual{order:1}}
-@media(max-width:640px){.visual-intro{padding:52px 0}.visual-intro-grid,.diy-grid{gap:26px}.visual-intro h2,.diy-section h2{font-size:34px}.visual-intro p,.diy-section p{font-size:17px}.story-visual{border-radius:18px;box-shadow:0 16px 44px rgba(2,47,73,.12)}.visual-break{padding:0 0 58px}.visual-caption{text-align:left;font-size:15px}.energy-path{margin-bottom:28px}.diy-checks{grid-template-columns:1fr}.diy-checks span{font-size:15px}.mobile-bar a:last-child{background:var(--orange);color:#fff}}

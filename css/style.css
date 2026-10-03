@@ -85,3 +85,15 @@
   .final-card p{font-size:15px}
   .footer-grid p,.footer-grid a{font-size:13px}
 }
+
+/* CALCULATOR TYPOGRAPHY — user-approved desktop sizes 2026-10-03 */
+@media (min-width:641px){
+  .lead-card>p{font-size:18px}
+  .lead-card label,.lead-card legend{font-size:18px}
+  .lead-card input,.lead-card select{font-size:18px}
+  .lead-card .money-input span{font-size:18px}
+  .lead-card .quick-values button{font-size:18px}
+  .lead-card .card-kicker{font-size:18px}
+  .lead-card .step-actions .btn,
+  .lead-card .btn-full{font-size:18px}
+}

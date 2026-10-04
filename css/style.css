@@ -322,12 +322,6 @@
 @media (max-width:640px){
   .hero-media{margin:0 0 28px;border-radius:16px;box-shadow:0 14px 34px rgba(0,0,0,.2)}
 }
-@media (prefers-reduced-motion:reduce){
-  .hero-video{display:none}
-  .hero-media{background:#061f31 url('../assets/solar-hero-poster.jpg') center/contain no-repeat}
-}
-
-
 /* HERO PRODUCTION FIX V2 — align Solar Check with media on desktop */
 @media (min-width:901px){
   .hero-grid{align-items:start}

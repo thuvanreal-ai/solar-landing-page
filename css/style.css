@@ -330,3 +330,25 @@
 
 /* HERO DESKTOP ALIGNMENT — approved mockup */
 @media (min-width:901px){.hero-grid>.lead-card{align-self:start}}
+
+
+/* SOLAR CHECK V2 — post-submit capacity result */
+.result-card{width:min(760px,100%)}
+.result-kicker{margin:18px 0 4px;font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--orange);text-transform:uppercase}
+.result-card h1{margin:8px 0 12px}
+.capacity-result{margin:24px auto 18px;padding:22px 18px;border-radius:18px;background:var(--navy);color:#fff;font:800 clamp(30px,5vw,48px)/1.1 Montserrat,Inter,sans-serif;letter-spacing:-.03em}
+.result-summary{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:18px 0 22px}
+.result-summary span{padding:13px 10px;border:1px solid var(--line);border-radius:12px;color:var(--muted);font-size:13px}
+.result-summary b{display:block;color:var(--navy);font-size:12px;margin-bottom:3px}
+.result-disclaimer{padding:14px 16px;border-radius:12px;background:#f8fafc;border:1px solid var(--line)}
+.result-home-link{display:inline-block;margin-top:22px;color:var(--muted);font-size:13px;font-weight:700}
+@media(max-width:640px){
+  .result-card{padding:30px 20px}
+  .result-kicker{font-size:12px}
+  .result-card h1{font-size:30px;line-height:1.15}
+  .result-card p{font-size:15px;line-height:1.65}
+  .capacity-result{font-size:34px;padding:20px 12px}
+  .result-summary{grid-template-columns:1fr}
+  .result-summary span{font-size:15px}
+  .result-summary b{font-size:13px}
+}

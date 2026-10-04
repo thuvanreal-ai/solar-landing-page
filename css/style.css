@@ -427,3 +427,7 @@
   .visual-factor-grid span{font-size:13px}
   .visual-code-action .btn{width:100%;min-width:0;font-size:16px}
 }
+
+.visual-code-note{max-width:920px;margin:18px auto 0;padding:13px 16px;border:1px solid #dbe5ec;border-radius:12px;background:#fff;color:var(--muted);font-size:13px;line-height:1.55;text-align:center}
+.visual-code-note b{color:var(--navy)}
+@media(max-width:760px){.visual-code-note{text-align:left;font-size:14px}}

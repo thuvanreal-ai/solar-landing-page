@@ -442,3 +442,61 @@
  .visual-system-grid b{font-size:16px}
  .visual-system-grid span{font-size:14px}
 }
+
+
+/* VISUAL V2 TEST — code-first, responsive and raster-free */
+.flow-v2-test{background:linear-gradient(180deg,#eef8ff 0%,#f8fbfd 100%)}
+.flow-v2-head{max-width:900px;margin:0 0 34px}
+.flow-v2-head h2{font-size:clamp(36px,4.7vw,58px);line-height:1.02;letter-spacing:-.04em;color:var(--navy);margin:10px 0 14px}
+.flow-v2-head h2 em{font-style:normal;color:#0f8a5f}
+.flow-v2-head p{font-size:17px;line-height:1.65;max-width:800px}
+.flow-v2-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.flow-card{background:#fff;border:1px solid #dce7ee;border-radius:22px;padding:22px;box-shadow:0 14px 40px rgba(2,47,73,.07)}
+.flow-green{background:linear-gradient(180deg,#f1fcf5,#fff)}
+.flow-blue{background:linear-gradient(180deg,#eef7ff,#fff)}
+.flow-orange{background:linear-gradient(180deg,#fff4eb,#fff)}
+.flow-title{display:flex;gap:12px;align-items:flex-start}
+.flow-title>b{width:40px;height:40px;flex:0 0 40px;border-radius:50%;display:grid;place-items:center;color:#fff;background:#0f8a5f;font:800 20px Montserrat}
+.flow-blue .flow-title>b{background:#1769c2}.flow-orange .flow-title>b{background:#f97316}
+.flow-title h3{font-size:21px;line-height:1.15;color:var(--navy);margin:0 0 3px}
+.flow-title span{font-size:14px;color:#0f8a5f;font-weight:700}
+.flow-blue .flow-title span{color:#1769c2}.flow-orange .flow-title span{color:#c94f08}
+.flow-card>p{font-size:15px;line-height:1.6;min-height:72px}
+.energy-map{position:relative;min-height:245px;border-radius:17px;background:#fff;border:1px solid #e3edf3;padding:18px;display:grid;grid-template-columns:1fr 34px 1.35fr;align-items:center;gap:5px}
+.energy-source{text-align:center;font-size:46px}.energy-source small,.energy-home small,.grid-help small{display:block;font-size:11px;line-height:1.35;color:#526574}
+.energy-arrow{text-align:center;font-size:30px;font-weight:900;color:#0f9b65}
+.flow-blue .energy-arrow{color:#1769c2}.flow-orange .energy-arrow{color:#f97316}
+.energy-home{padding:15px 10px;text-align:center;border-radius:14px;background:#eefaf3;font-size:28px}
+.flow-blue .energy-home{background:#edf6ff}.flow-orange .energy-home{background:#fff2e8}
+.energy-home strong{display:block;font-size:13px;color:var(--navy);margin:4px 0}
+.grid-help{grid-column:1/-1;text-align:center;margin-top:4px;padding:8px;border-radius:10px;background:#f7f9fb;color:var(--navy);font-size:12px;font-weight:700}
+.flow-card ul{padding:0;margin:18px 0;list-style:none}
+.flow-card li{position:relative;padding:6px 0 6px 25px;font-size:14px;line-height:1.45;color:#34495a}
+.flow-card li:before{content:"✓";position:absolute;left:0;top:6px;width:18px;height:18px;border-radius:50%;display:grid;place-items:center;background:#0f8a5f;color:#fff;font-size:11px;font-weight:900}
+.flow-blue li:before{background:#1769c2}.flow-orange li:before{background:#f97316}
+.flow-fit{margin-top:auto;padding:15px;border-radius:14px;background:#e7f7ee;color:#2b5f49;font-size:13px;line-height:1.5}
+.flow-blue .flow-fit{background:#e6f2ff;color:#285b91}.flow-orange .flow-fit{background:#ffeddf;color:#8f491e}
+.flow-v2-bottom{text-align:center;margin-top:18px;padding:26px;border-radius:20px;background:#e8f4ff}
+.flow-v2-bottom h3{margin:0 0 5px;color:var(--navy);font-size:25px}
+.flow-v2-bottom p{max-width:820px;margin:0 auto 18px;font-size:15px}
+.flow-v2-bottom .btn{font-size:16px;min-width:320px}
+@media(max-width:900px){.flow-v2-grid{grid-template-columns:1fr}.flow-card>p{min-height:0}.energy-map{min-height:0}}
+@media(max-width:640px){
+ .flow-v2-test{padding:52px 0}
+ .flow-v2-head{margin-bottom:24px}
+ .flow-v2-head h2{font-size:36px}
+ .flow-v2-head p{font-size:16px}
+ .flow-v2-grid{gap:13px}
+ .flow-card{padding:18px;border-radius:18px}
+ .flow-title h3{font-size:21px}
+ .flow-title span{font-size:14px}
+ .flow-card>p{font-size:15px}
+ .energy-map{grid-template-columns:1fr 30px 1.25fr;padding:13px}
+ .energy-source{font-size:38px}
+ .flow-card li{font-size:14px}
+ .flow-fit{font-size:14px}
+ .flow-v2-bottom{padding:22px 16px}
+ .flow-v2-bottom h3{font-size:23px}
+ .flow-v2-bottom p{font-size:15px}
+ .flow-v2-bottom .btn{width:100%;min-width:0}
+}

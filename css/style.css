@@ -431,3 +431,14 @@
 .visual-code-note{max-width:920px;margin:18px auto 0;padding:13px 16px;border:1px solid #dbe5ec;border-radius:12px;background:#fff;color:var(--muted);font-size:13px;line-height:1.55;text-align:center}
 .visual-code-note b{color:var(--navy)}
 @media(max-width:760px){.visual-code-note{text-align:left;font-size:14px}}
+
+.visual-system-grid{grid-template-columns:repeat(2,1fr)}
+.visual-system-grid>div{min-height:190px}
+.visual-system-grid b{font-size:16px}
+.visual-system-grid span{font-size:14px;line-height:1.6}
+@media(max-width:760px){
+ .visual-system-grid{grid-template-columns:1fr}
+ .visual-system-grid>div{min-height:0}
+ .visual-system-grid b{font-size:16px}
+ .visual-system-grid span{font-size:14px}
+}

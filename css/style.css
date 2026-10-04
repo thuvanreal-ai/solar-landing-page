@@ -521,3 +521,12 @@
  .device small{font-size:10px}.power-line{font-size:23px}.grid-branch{width:max-content;max-width:92%;justify-content:center}.battery-branch{right:8px}
  .battery-cabinet{width:60px;height:84px}.building-shape{width:62px;height:75px}
 }
+
+
+/* VISUAL V2 — approved real-equipment artwork */
+.flow-v2-real-visual{width:100%;margin:6px auto 20px;border-radius:22px;overflow:hidden;background:#fff;border:1px solid #dce7ee;box-shadow:0 16px 42px rgba(2,47,73,.08)}
+.flow-v2-real-visual img{display:block;width:100%;height:auto}
+@media(max-width:640px){
+ .flow-v2-real-visual{border-radius:16px;overflow-x:auto;-webkit-overflow-scrolling:touch}
+ .flow-v2-real-visual img{width:980px;max-width:none}
+}

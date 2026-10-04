@@ -546,3 +546,22 @@
  .process-v3-copy p{font-size:16px}
  .process-v3-visual{max-width:390px;margin:0 auto;border-radius:18px}
 }
+
+
+/* VISUAL V4 COMPONENTS — approved desktop/mobile mockup */
+.components-v4-section{background:#eef7fc}
+.components-v4-copy{max-width:900px;margin:0 0 24px}
+.components-v4-copy h2{margin:10px 0 12px;color:var(--navy);font-size:clamp(36px,4.2vw,54px);line-height:1.05;letter-spacing:-.035em}
+.components-v4-copy p{max-width:820px;margin:0;font-size:17px;line-height:1.65}
+.components-v4-visual{display:block;width:100%;border:1px solid #dce7ee;border-radius:22px;overflow:hidden;background:#fff;box-shadow:0 16px 42px rgba(2,47,73,.08)}
+.components-v4-visual img{display:block;width:100%;height:auto}
+.components-v4-action{text-align:center;margin-top:22px}
+.components-v4-action .btn{min-width:300px}
+@media(max-width:640px){
+ .components-v4-section{padding:48px 0 56px}
+ .components-v4-copy{margin-bottom:18px}
+ .components-v4-copy h2{font-size:35px}
+ .components-v4-copy p{font-size:16px}
+ .components-v4-visual{max-width:390px;margin:0 auto;border-radius:18px}
+ .components-v4-action .btn{width:100%;min-width:0}
+}

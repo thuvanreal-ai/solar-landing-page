@@ -530,3 +530,19 @@
  .flow-v2-real-visual{border-radius:16px;overflow-x:auto;-webkit-overflow-scrolling:touch}
  .flow-v2-real-visual img{width:980px;max-width:none}
 }
+
+
+/* VISUAL V3 PROCESS — approved desktop/mobile mockup */
+.process-v3-section{background:#f4f8fb}
+.process-v3-copy{max-width:880px;margin:0 0 24px}
+.process-v3-copy h2{margin:10px 0 12px;color:var(--navy);font-size:clamp(36px,4.2vw,54px);line-height:1.05;letter-spacing:-.035em}
+.process-v3-copy p{max-width:800px;margin:0;font-size:17px;line-height:1.65}
+.process-v3-visual{display:block;width:100%;border:1px solid #dce7ee;border-radius:22px;overflow:hidden;background:#fff;box-shadow:0 16px 42px rgba(2,47,73,.08)}
+.process-v3-visual img{display:block;width:100%;height:auto}
+@media(max-width:640px){
+ .process-v3-section{padding:48px 0 56px}
+ .process-v3-copy{margin-bottom:18px}
+ .process-v3-copy h2{font-size:35px}
+ .process-v3-copy p{font-size:16px}
+ .process-v3-visual{max-width:390px;margin:0 auto;border-radius:18px}
+}

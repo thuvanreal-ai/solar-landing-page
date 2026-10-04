@@ -500,3 +500,24 @@
  .flow-v2-bottom p{font-size:15px}
  .flow-v2-bottom .btn{width:100%;min-width:0}
 }
+
+
+/* VISUAL V2 EQUIPMENT DIAGRAM — no emoji */
+.solar-flow-diagram{position:relative;min-height:260px;border:1px solid #dbe7ee;border-radius:18px;background:rgba(255,255,255,.88);padding:26px 14px 66px;display:grid;grid-template-columns:1fr 32px 1fr 32px 1fr;align-items:center;gap:2px}
+.device{text-align:center;position:relative;z-index:2}.device small{display:block;margin-top:9px;color:#405568;font-size:11px;font-weight:700;line-height:1.35}
+.sun-disc{display:block;width:34px;height:34px;margin:0 auto -5px;border-radius:50%;background:#ffc928;box-shadow:0 0 0 7px rgba(255,201,40,.15)}
+.panel-array,.mini-panel{display:block;width:82px;height:52px;margin:auto;transform:skew(-12deg);border:3px solid #123d61;border-radius:3px;background:repeating-linear-gradient(90deg,transparent 0 18px,rgba(255,255,255,.7) 18px 20px),repeating-linear-gradient(0deg,#1769a7 0 14px,#fff 14px 16px)}
+.inverter-box{width:64px;height:88px;margin:auto;border:2px solid #b8c8d4;border-radius:9px;background:linear-gradient(#fff,#eef3f6);display:grid;place-items:center;color:#4d6474;font-size:10px;line-height:1}.inverter-box b{font-size:19px;color:#159566}
+.house-shape{display:block;position:relative;width:82px;height:61px;margin:19px auto 0;background:#f7fbfd;border:3px solid #123d61;border-radius:3px}.house-shape:before{content:"";position:absolute;width:57px;height:57px;left:9px;top:-31px;background:#f7fbfd;border-left:3px solid #123d61;border-top:3px solid #123d61;transform:rotate(45deg);z-index:-1}.house-shape i{position:absolute;width:20px;height:32px;left:28px;bottom:0;background:#ffb357;border:2px solid #123d61}
+.power-line{text-align:center;font-size:30px;font-weight:900}.green-line{color:#0f9b65}.blue-line{color:#1769c2}.orange-line{color:#f97316}
+.grid-branch{position:absolute;bottom:12px;left:50%;transform:translateX(-50%);display:flex;align-items:center;gap:9px;padding:7px 12px;border-radius:10px;background:#f4f7f9;color:#314a5e;font-size:11px;font-weight:700}.grid-branch small{font-size:11px}.grid-tower{width:28px;height:39px;display:block;clip-path:polygon(44% 0,56% 0,63% 20%,85% 27%,82% 34%,65% 31%,71% 49%,92% 58%,88% 65%,69% 58%,80% 100%,67% 100%,50% 67%,33% 100%,20% 100%,31% 58%,12% 65%,8% 58%,29% 49%,35% 31%,18% 34%,15% 27%,37% 20%);background:#163c57}
+.battery-branch{position:absolute;right:16px;bottom:12px;display:flex;align-items:center;gap:7px;color:#285b91}.battery-branch small{font-size:10px;font-weight:700}.battery-pack{display:flex;gap:2px}.battery-pack i{display:block;width:12px;height:29px;border:2px solid #1769c2;border-radius:3px;background:#dcecff}
+.storage-diagram{padding-bottom:26px}.storage-diagram .power-line{font-size:28px}.source-stack{display:flex;align-items:flex-end;justify-content:center;gap:5px}.mini-panel{width:57px;height:38px}.mini-grid{width:24px;height:35px;background:#163c57;clip-path:polygon(44% 0,56% 0,64% 24%,85% 31%,81% 39%,65% 36%,74% 100%,26% 100%,35% 36%,19% 39%,15% 31%,36% 24%)}
+.battery-cabinet{width:76px;height:102px;margin:auto;border:3px solid #44515a;border-radius:7px;background:linear-gradient(90deg,#e9edef,#fff 45%,#d8dfe3);padding:14px 10px}.battery-cabinet i{display:block;height:17px;margin:4px 0;border-radius:2px;background:#f0a13a;border:1px solid #b76b12}
+.building-shape{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;width:78px;height:90px;margin:auto;padding:17px 10px;background:#f5f8fa;border:3px solid #123d61;border-radius:4px}.building-shape i{background:#ffc268;border:1px solid #123d61}
+@media(max-width:640px){
+ .solar-flow-diagram{min-height:220px;padding:22px 8px 62px;grid-template-columns:1fr 24px 1fr 24px 1fr}
+ .panel-array{width:65px;height:43px}.inverter-box{width:54px;height:76px}.house-shape{width:64px;height:49px}.house-shape:before{width:46px;height:46px;left:6px;top:-25px}.house-shape i{width:16px;height:26px;left:21px}
+ .device small{font-size:10px}.power-line{font-size:23px}.grid-branch{width:max-content;max-width:92%;justify-content:center}.battery-branch{right:8px}
+ .battery-cabinet{width:60px;height:84px}.building-shape{width:62px;height:75px}
+}

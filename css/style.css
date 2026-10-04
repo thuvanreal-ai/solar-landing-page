@@ -363,3 +363,67 @@
   .visual-v1-section{padding:42px 0 52px}
   .visual-v1-picture{border-radius:16px;box-shadow:0 14px 34px rgba(2,47,73,.10)}
 }
+
+
+/* VISUAL V1 CODE TEST — raster-free text/cards for sharp responsive rendering */
+.visual-code-section{background:#f4f7f9}
+.visual-code-head{text-align:center;max-width:980px;margin:0 auto 34px}
+.visual-code-head h2{margin:12px auto 14px}
+.visual-code-head p{max-width:900px;margin:0 auto;font-size:17px;line-height:1.65}
+.visual-code-cases{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.solar-case{background:#fff;border:1px solid var(--line);border-radius:22px;padding:24px;box-shadow:0 16px 42px rgba(2,47,73,.08)}
+.case-top{display:flex;align-items:center;justify-content:space-between;gap:14px;padding-bottom:18px;border-bottom:1px solid var(--line)}
+.case-top>div{display:flex;align-items:center;gap:11px}
+.case-icon{width:42px;height:42px;display:grid;place-items:center;border-radius:12px;background:#eaf8f0;color:#0f8a5f;font-size:25px;font-weight:900}
+.solar-case-business .case-icon{background:#fff1e8;color:var(--orange)}
+.case-top h3{margin:0;color:var(--navy);font-size:21px}
+.case-bill{padding:8px 11px;border-radius:999px;background:#f4f7f9;color:var(--muted);font-size:13px;white-space:nowrap}
+.case-signals{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;padding:20px 0}
+.case-signals span{font-size:14px;line-height:1.45;color:#475569}
+.case-signals b{color:var(--navy)}
+.case-result{display:grid;grid-template-columns:.8fr 1.2fr;gap:12px;border-radius:16px;padding:17px;background:#eaf8f0;color:#356b55}
+.solar-case-business .case-result{background:#fff1e8;color:#9a4d17}
+.case-result>span{font-size:13px}
+.case-result strong{display:block;margin-top:3px;font:800 31px/1.1 Montserrat,Inter,sans-serif;color:#0f8a5f}
+.solar-case-business .case-result strong{color:var(--orange)}
+.case-choice{display:flex;flex-direction:column;justify-content:center;padding-left:12px;border-left:1px solid rgba(15,118,110,.16)}
+.solar-case-business .case-choice{border-left-color:rgba(249,115,22,.2)}
+.case-choice b{font-size:15px}
+.case-choice small{font-size:12px;margin-top:2px}
+.visual-factors{margin-top:20px;background:#eaf4ff;border-radius:22px;padding:28px}
+.visual-factors>h3{text-align:center;color:var(--navy);font-size:24px;margin:0 0 3px}
+.visual-factors>p{text-align:center;margin:0 auto 22px;font-size:14px}
+.visual-factor-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.visual-factor-grid>div{background:#fff;border:1px solid rgba(8,47,73,.08);border-radius:15px;padding:18px}
+.visual-factor-grid i{display:block;font-style:normal;font-size:25px;margin-bottom:8px}
+.visual-factor-grid b{display:block;color:var(--navy);font-size:15px;margin-bottom:5px}
+.visual-factor-grid span{display:block;color:var(--muted);font-size:13px;line-height:1.5}
+.visual-code-action{text-align:center;margin-top:26px}
+.visual-code-action .btn{min-width:320px;font-size:16px}
+@media(max-width:760px){
+  .visual-code-section{padding:48px 0 54px}
+  .visual-code-head{text-align:left;margin-bottom:25px}
+  .visual-code-head h2{font-size:34px;line-height:1.1}
+  .visual-code-head p{font-size:16px}
+  .visual-code-cases{grid-template-columns:1fr;gap:14px}
+  .solar-case{padding:18px;border-radius:18px}
+  .case-top{align-items:flex-start;flex-direction:column}
+  .case-top h3{font-size:20px}
+  .case-bill{font-size:13px}
+  .case-signals{grid-template-columns:1fr;padding:16px 0;gap:8px}
+  .case-signals span{font-size:15px}
+  .case-result{grid-template-columns:1fr}
+  .case-result strong{font-size:34px}
+  .case-choice{padding:12px 0 0;border-left:0;border-top:1px solid rgba(15,118,110,.16)}
+  .solar-case-business .case-choice{border-top-color:rgba(249,115,22,.2)}
+  .case-choice b{font-size:16px}
+  .case-choice small{font-size:13px}
+  .visual-factors{padding:22px 16px;border-radius:18px}
+  .visual-factors>h3{text-align:left;font-size:23px}
+  .visual-factors>p{text-align:left;font-size:15px}
+  .visual-factor-grid{grid-template-columns:1fr 1fr;gap:9px}
+  .visual-factor-grid>div{padding:14px}
+  .visual-factor-grid b{font-size:14px}
+  .visual-factor-grid span{font-size:13px}
+  .visual-code-action .btn{width:100%;min-width:0;font-size:16px}
+}

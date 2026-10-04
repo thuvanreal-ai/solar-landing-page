@@ -356,12 +356,10 @@
 
 /* VISUAL V1 — approved desktop/mobile mockup */
 .visual-v1-section{background:#f4f7f9}
+.visual-v1-link{display:block;width:100%;cursor:pointer}
 .visual-v1-picture{display:block;width:100%;border-radius:22px;overflow:hidden;box-shadow:0 20px 55px rgba(2,47,73,.10);background:#fff}
 .visual-v1-picture img{display:block;width:100%;height:auto}
-.visual-v1-cta{display:flex;justify-content:center;margin-top:28px}
 @media(max-width:640px){
   .visual-v1-section{padding:42px 0 52px}
   .visual-v1-picture{border-radius:16px;box-shadow:0 14px 34px rgba(2,47,73,.10)}
-  .visual-v1-cta{margin-top:22px}
-  .visual-v1-cta .btn{width:100%;min-height:54px;font-size:16px}
 }

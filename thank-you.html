@@ -1,1 +1,49 @@
-<!doctype html><html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Đã nhận thông tin | Solar</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Montserrat:wght@700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="css/style.css"></head><body class="thank-page"><main class="thank-card"><div class="success-icon">✓</div><h1>Đã nhận thông tin.</h1><p>Cảm ơn anh/chị. Bước tiếp theo là kiểm tra dữ liệu đã gửi và xác định những thông tin cần bổ sung trước khi tư vấn phương án.</p><p><strong>Nếu có hóa đơn điện chưa gửi, anh/chị có thể gửi thêm qua Zalo.</strong></p><div class="thank-actions"><a class="btn btn-primary" data-zalo-link href="#">Gửi hóa đơn qua Zalo</a><a class="btn btn-ghost" href="index.html">Về trang chính</a></div></main><script src="js/config.js"></script><script src="js/app.js"></script></body></html>
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Công suất Solar dự kiến | Solar</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="thank-page">
+  <main class="thank-card result-card">
+    <div class="success-icon">✓</div>
+    <div class="result-kicker">KẾT QUẢ SOLAR CHECK</div>
+    <h1>Công suất Solar dự kiến</h1>
+    <p>Với thông tin anh/chị vừa cung cấp, hệ thống sơ bộ xác định khoảng công suất phù hợp để tiếp tục phân tích:</p>
+    <div class="capacity-result" id="capacityResult">Đang tính...</div>
+    <div class="result-summary" id="resultSummary"></div>
+    <p id="resultNote"></p>
+    <p class="result-disclaimer"><strong>Đây là mức tham khảo ban đầu.</strong> Công suất thực tế cần kiểm tra thêm diện tích mái, hướng mái, bóng che, hệ điện hiện hữu và tải sử dụng thực tế.</p>
+    <p><strong>Bước tiếp theo:</strong> gửi hóa đơn điện hoặc trao đổi với tư vấn để kiểm tra cấu hình phù hợp hơn.</p>
+    <div class="thank-actions">
+      <a class="btn btn-primary" data-zalo-link href="#">Gửi hóa đơn qua Zalo</a>
+      <a class="btn btn-secondary" data-phone-link href="tel:0916858566">Gọi tư vấn</a>
+    </div>
+    <a class="result-home-link" href="index.html">← Về trang chính</a>
+  </main>
+  <script src="js/config.js"></script>
+  <script>
+    (() => {
+      const q=new URLSearchParams(location.search);
+      const range=q.get('range')||'Cần phân tích thêm để xác định công suất';
+      const bill=Number(q.get('bill')||0);
+      const property=q.get('property')||'';
+      const usage=q.get('usage')||'';
+      const note=q.get('note')||'';
+      document.getElementById('capacityResult').textContent=range;
+      const parts=[];
+      if(bill)parts.push('<span><b>Tiền điện</b>'+new Intl.NumberFormat('vi-VN').format(bill)+' đ/tháng</span>');
+      if(property)parts.push('<span><b>Mục đích</b>'+property+'</span>');
+      if(usage)parts.push('<span><b>Dùng điện nhiều</b>'+usage+'</span>');
+      document.getElementById('resultSummary').innerHTML=parts.join('');
+      document.getElementById('resultNote').textContent=note;
+    })();
+  </script>
+  <script src="js/app.js"></script>
+</body>
+</html>

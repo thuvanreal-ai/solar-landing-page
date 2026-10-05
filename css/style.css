@@ -710,3 +710,36 @@
  .info-card-scroll li{font-size:14px;line-height:1.42;margin:6px 0}
  .card-time{margin-top:10px}
 }
+
+
+/* HQ CARD VISUALS — approved 2026-10-05
+   Single 1536x1024 source sheet; each card crops its own native region.
+   No enlargement from the older V3/V4 screenshots. */
+.card-visual.process-photo,.card-visual.component-photo{
+ background-image:url("../assets/solar-card-visuals-hq.png?v=20261005-hq1");
+ background-repeat:no-repeat;
+ background-color:#eaf5fb;
+}
+
+/* Top sheet: 6 process photo cells, x≈15..1521, y≈112..374 */
+.process-photo{
+ background-size:600% auto !important;
+}
+.process-photo.p1{background-position:0% 17%}
+.process-photo.p2{background-position:20% 17%}
+.process-photo.p3{background-position:40% 17%}
+.process-photo.p4{background-position:60% 17%}
+.process-photo.p5{background-position:80% 17%}
+.process-photo.p6{background-position:100% 17%}
+
+/* Bottom sheet: 7 component photo cells, x≈15..1521, y≈426..639 */
+.component-photo{
+ background-size:700% auto !important;
+}
+.component-photo.c1{background-position:0% 55%}
+.component-photo.c2{background-position:16.667% 55%}
+.component-photo.c3{background-position:33.333% 55%}
+.component-photo.c4{background-position:50% 55%}
+.component-photo.c5{background-position:66.667% 55%}
+.component-photo.c6{background-position:83.333% 55%}
+.component-photo.c7{background-position:100% 55%}

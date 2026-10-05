@@ -647,3 +647,38 @@
  .card-time{font-size:15px}
  .requirement{font-size:13px}
 }
+
+
+/* REAL PHOTO CARD PATCH — match approved mockup */
+.card-visual.process-photo,.card-visual.component-photo{
+ background-repeat:no-repeat;
+ background-color:#eaf5fb;
+ font-size:0;
+}
+.process-photo{background-image:url("../assets/solar-visual-v3-process-desktop.png?v=20261005-photo")}
+.process-photo.p1{background-size:820% auto;background-position:0% 45%}
+.process-photo.p2{background-size:820% auto;background-position:20% 45%}
+.process-photo.p3{background-size:820% auto;background-position:40% 45%}
+.process-photo.p4{background-size:820% auto;background-position:60% 45%}
+.process-photo.p5{background-size:820% auto;background-position:80% 45%}
+.process-photo.p6{background-size:820% auto;background-position:100% 45%}
+.component-photo{background-image:url("../assets/solar-visual-v4-components-desktop.png?v=20261005-photo")}
+.component-photo.c1{background-size:900% auto;background-position:0% 45%}
+.component-photo.c2{background-size:900% auto;background-position:16.5% 45%}
+.component-photo.c3{background-size:900% auto;background-position:33% 45%}
+.component-photo.c4{background-size:900% auto;background-position:50% 45%}
+.component-photo.c5{background-size:900% auto;background-position:66.5% 45%}
+.component-photo.c6{background-size:900% auto;background-position:83% 45%}
+.component-photo.c7{background-size:900% auto;background-position:100% 45%}
+@media(min-width:901px){
+ .process-card-grid{grid-template-columns:repeat(3,1fr);gap:18px}
+ .component-card-grid{grid-template-columns:repeat(4,1fr);gap:18px}
+ .info-card-scroll article{padding:18px}
+ .card-visual,.component-card-grid .card-visual{height:190px}
+ .info-card-scroll h3,.component-card-grid h3{font-size:19px}
+ .info-card-scroll li{font-size:14px}
+}
+@media(max-width:640px){
+ .info-card-scroll article{flex-basis:78%}
+ .card-visual,.component-card-grid .card-visual{height:180px}
+}

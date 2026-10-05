@@ -743,3 +743,12 @@
 .component-photo.c5{background-position:66.667% 55%}
 .component-photo.c6{background-position:83.333% 55%}
 .component-photo.c7{background-position:100% 55%}
+
+
+/* COMPONENT HQ CROP FIX 2026-10-05
+   Previous y=55% exposed text/badges baked into the composite source.
+   Move crop down to the clean photographic band only. */
+.component-photo.c1,.component-photo.c2,.component-photo.c3,
+.component-photo.c4,.component-photo.c5,.component-photo.c6{
+ background-position-y:71% !important;
+}

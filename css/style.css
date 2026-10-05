@@ -565,3 +565,43 @@
  .components-v4-visual{max-width:390px;margin:0 auto;border-radius:18px}
  .components-v4-action .btn{width:100%;min-width:0}
 }
+
+
+/* APPROVED SEO MOCKUP 2026-10-05 — Hero -> prominent Solar Check -> 3 options */
+.hero-grid{grid-template-columns:1fr;gap:0}
+.hero-copy{max-width:100%}
+.hero-copy .hero-media{max-width:760px;margin-left:auto;margin-right:auto}
+.solar-check-band{position:relative;z-index:5;background:#edf7fc;padding:0 0 34px}
+.solar-check-band .container{transform:translateY(-28px);margin-bottom:-28px}
+.solar-check-band .lead-card{max-width:none;margin:0;border:1px solid #d5e6ef;box-shadow:0 18px 48px rgba(2,47,73,.13);padding:30px 34px}
+.solar-check-band .lead-card h2{font-size:30px}
+.solar-check-band .lead-card>p{max-width:760px}
+.solar-check-band .card-kicker{background:#eaf9ef;color:#0f8a5f}
+.solar-check-band .progress{max-width:420px}
+#kiem-tra{scroll-margin-top:96px}
+#dong-dien-solar,#quy-trinh,#cau-thanh-he-solar,#faq{scroll-margin-top:86px}
+@media(min-width:901px){
+ .hero{padding-bottom:104px}
+ .hero-copy{display:grid;grid-template-columns:minmax(0,1fr) minmax(420px,.9fr);column-gap:52px;align-items:center}
+ .hero-copy .hero-media{grid-column:2;grid-row:1/9;margin:0;width:100%}
+ .hero-copy .eyebrow,.hero-copy h1,.hero-copy .hero-lead,.hero-copy .hero-points,.hero-copy .hero-actions,.hero-copy .microcopy{grid-column:1}
+ .hero-copy .eyebrow{grid-row:1}
+ .hero-copy h1{grid-row:2;font-size:clamp(42px,4.4vw,62px)}
+ .hero-copy .hero-lead{grid-row:3}
+ .hero-copy .hero-points{grid-row:4}
+ .hero-copy .hero-actions{grid-row:5}
+ .hero-copy .microcopy{grid-row:6}
+}
+@media(max-width:900px){
+ .solar-check-band{padding:0 0 28px}
+ .solar-check-band .container{transform:translateY(-20px);margin-bottom:-20px}
+ .solar-check-band .lead-card{max-width:720px}
+}
+@media(max-width:640px){
+ .hero{padding-bottom:64px}
+ .solar-check-band{padding-bottom:18px}
+ .solar-check-band .container{width:min(100% - 24px,1180px);transform:translateY(-18px);margin-bottom:-18px}
+ .solar-check-band .lead-card{padding:22px 18px;border-radius:20px}
+ .solar-check-band .lead-card h2{font-size:27px}
+ .solar-check-band .lead-card>p{font-size:16px}
+}

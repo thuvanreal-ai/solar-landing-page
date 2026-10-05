@@ -682,3 +682,31 @@
  .info-card-scroll article{flex-basis:78%}
  .card-visual,.component-card-grid .card-visual{height:180px}
 }
+
+
+/* QA FIX 2026-10-05 — card proportions + Zalo icon */
+.mobile-bar a[data-track="mobile_zalo"]{display:flex;align-items:center;justify-content:center;gap:10px}
+.mobile-zalo-icon{display:inline-grid;place-items:center;width:30px;height:30px;border-radius:50%;background:#fff;color:var(--orange);font:800 16px/1 Montserrat,Arial,sans-serif;flex:0 0 auto}
+
+/* Cards must read like the approved 3-option visual: image first, compact copy, no oversized empty stage */
+.info-card-scroll article{overflow:hidden}
+.card-visual.process-photo,.card-visual.component-photo{
+ height:176px;
+ border-radius:14px;
+ background-color:#dcecf4;
+ background-repeat:no-repeat;
+ box-shadow:inset 0 0 0 1px rgba(2,47,73,.04);
+}
+@media(min-width:901px){
+ .process-card-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+ .component-card-grid{grid-template-columns:repeat(4,minmax(0,1fr))}
+ .card-visual.process-photo,.card-visual.component-photo{height:178px}
+}
+@media(max-width:640px){
+ .info-card-scroll{gap:14px}
+ .info-card-scroll article{flex:0 0 82%;padding:15px}
+ .card-visual.process-photo,.card-visual.component-photo{height:172px;margin:6px 0 14px}
+ .info-card-scroll h3,.component-card-grid h3{font-size:19px;line-height:1.25}
+ .info-card-scroll li{font-size:14px;line-height:1.42;margin:6px 0}
+ .card-time{margin-top:10px}
+}

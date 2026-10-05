@@ -605,3 +605,45 @@
  .solar-check-band .lead-card h2{font-size:27px}
  .solar-check-band .lead-card>p{font-size:16px}
 }
+
+
+/* APPROVED CARD REDESIGN — Process + Components 2026-10-05 */
+.process-cards-section{background:#f3f9fd}
+.components-cards-section{background:#fff}
+.process-cards-head,.components-cards-head{align-items:center}
+.process-cards-head h2 em{color:#0f8a5f}
+.info-card-scroll{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:12px}
+.info-card-scroll article{position:relative;min-width:0;background:#fff;border:1px solid #dce8ef;border-radius:17px;padding:16px;box-shadow:0 8px 24px rgba(2,47,73,.055)}
+.card-number{display:grid;place-items:center;width:38px;height:38px;border-radius:50%;background:#0877e8;color:#fff;font:800 14px Montserrat;margin-bottom:10px}
+.process-card-grid article:nth-child(2) .card-number,.process-card-grid article:nth-child(5) .card-number{background:#0f9f67}
+.process-card-grid article:nth-child(3) .card-number,.process-card-grid article:nth-child(6) .card-number{background:var(--orange)}
+.card-visual{height:112px;border-radius:12px;background:linear-gradient(145deg,#eaf6fc,#f8fbfd);display:grid;place-items:center;font-size:48px;margin:4px 0 13px;overflow:hidden}
+.info-card-scroll h3{font-size:16px;line-height:1.25;color:var(--navy);margin:8px 0 10px}
+.info-card-scroll ul{list-style:none;margin:0;padding:0}
+.info-card-scroll li{position:relative;padding-left:18px;margin:7px 0;font-size:13px;line-height:1.45;color:#52677a}
+.info-card-scroll li:before{content:"✓";position:absolute;left:0;top:0;color:#0f9f67;font-weight:900}
+.card-time{display:block;color:#075fc7;font-size:13px;font-weight:800;margin-top:14px}
+.requirement{display:inline-block;border-radius:7px;padding:5px 8px;color:#fff;font-size:11px;font-weight:800;margin-bottom:6px}
+.requirement.required{background:var(--orange)}
+.requirement.optional{background:#39a844}
+.component-card-grid .card-visual{height:128px}
+.component-card-grid h3{font-size:17px}
+.components-cards-section .components-v4-action{margin-top:24px}
+@media(max-width:900px){
+ .info-card-scroll{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;padding:2px 2px 15px;gap:12px;-webkit-overflow-scrolling:touch}
+ .info-card-scroll article{flex:0 0 72%;scroll-snap-align:start}
+}
+@media(max-width:640px){
+ .process-cards-section,.components-cards-section{padding:52px 0}
+ .process-cards-head,.components-cards-head{margin-bottom:22px}
+ .process-cards-head h2,.components-cards-head h2{font-size:35px}
+ .process-cards-head>p,.components-cards-head>p{font-size:16px}
+ .info-card-scroll{margin-right:-16px;padding-right:16px}
+ .info-card-scroll article{flex-basis:84%;padding:16px}
+ .card-visual{height:150px;font-size:58px}
+ .component-card-grid .card-visual{height:165px}
+ .info-card-scroll h3,.component-card-grid h3{font-size:20px}
+ .info-card-scroll li{font-size:15px}
+ .card-time{font-size:15px}
+ .requirement{font-size:13px}
+}

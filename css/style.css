@@ -752,3 +752,18 @@
 .component-photo.c4,.component-photo.c5,.component-photo.c6{
  background-position-y:71% !important;
 }
+
+
+/* FINAL INDIVIDUAL CARD IMAGES 2026-10-06
+   Six independent photographic assets. No composite-sheet cropping. */
+.card-visual.component-photo{
+ background-size:cover !important;
+ background-position:center !important;
+ background-repeat:no-repeat !important;
+}
+.component-photo.c1{background-image:url("../assets/01-tam-pin-solar.jpg?v=20261006-1") !important}
+.component-photo.c2{background-image:url("../assets/02-bien-tan-inverter.jpg?v=20261006-1") !important}
+.component-photo.c3{background-image:url("../assets/03-pin-luu-tru.jpg?v=20261006-1") !important}
+.component-photo.c4{background-image:url("../assets/04-tu-dien-thiet-bi-bao-ve.jpg?v=20261006-1") !important}
+.component-photo.c5{background-image:url("../assets/05-khung-gia-do-phu-kien.jpg?v=20261006-1") !important}
+.component-photo.c6{background-image:url("../assets/06-thi-cong-lap-dat.jpg?v=20261006-1") !important}

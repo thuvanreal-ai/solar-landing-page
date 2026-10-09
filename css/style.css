@@ -767,3 +767,6 @@
 .component-photo.c4{background-image:url("../assets/04-tu-dien-thiet-bi-bao-ve.jpg?v=20261006-1") !important}
 .component-photo.c5{background-image:url("../assets/05-khung-gia-do-phu-kien.jpg?v=20261006-1") !important}
 .component-photo.c6{background-image:url("../assets/06-thi-cong-lap-dat.jpg?v=20261006-1") !important}
+
+/* ERA Solar responsive brand logo */
+.brand-logo{display:block;line-height:0;flex-shrink:0}.brand-logo img{display:block;width:175px;height:auto;max-height:52px;object-fit:contain}@media(max-width:640px){.brand-logo img{width:132px;max-height:44px}}

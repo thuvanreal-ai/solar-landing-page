@@ -790,3 +790,32 @@
   .site-header .brand-logo img{width:112px}
   .site-header .nav-actions .phone-link{font-size:11px;padding:8px}
 }
+
+/* ERA Solar responsive navigation: same five sections on desktop and mobile */
+.mobile-nav-menu{display:none}
+@media(max-width:900px){
+ .site-header .nav-wrap{position:relative}
+ .mobile-nav-menu{display:block;order:3;flex:0 0 auto;z-index:4}
+ .mobile-nav-menu>summary{list-style:none;display:flex;align-items:center;justify-content:center;gap:5px;cursor:pointer;min-height:42px;padding:8px 11px;border:1px solid var(--line);border-radius:10px;color:var(--navy);font-size:20px;font-weight:800;background:#fff}
+ .mobile-nav-menu>summary::-webkit-details-marker{display:none}
+ .mobile-nav-menu .menu-label{font-size:12px}
+ .mobile-nav-menu[open]>summary{background:#eef5f8}
+ .mobile-nav-menu nav{position:absolute;right:0;top:calc(100% - 1px);width:min(310px,calc(100vw - 28px));background:#fff;border:1px solid var(--line);border-radius:0 0 14px 14px;box-shadow:0 16px 28px rgba(2,24,40,.18);padding:8px;display:flex;flex-direction:column;z-index:90}
+ .mobile-nav-menu nav a{display:block;padding:13px 15px;font-size:15px;font-weight:700;color:var(--navy);border-radius:8px}
+ .mobile-nav-menu nav a:hover,.mobile-nav-menu nav a:focus{background:#f1f5f9}
+}
+@media(max-width:640px){
+ .site-header .nav-wrap{gap:6px}
+ .site-header .brand{margin-right:auto}
+ .site-header .nav-actions{order:2;flex:0 0 auto}
+ .site-header .mobile-nav-menu{order:3}
+ .site-header .mobile-nav-menu>summary{padding:8px 9px}
+ .site-header .mobile-nav-menu .menu-label{display:none}
+ .site-header .nav-actions .phone-link{font-size:11px;padding:9px 8px}
+ .site-header .nav-actions .phone-link [data-phone-display]{font-size:11px}
+}
+@media(max-width:375px){
+ .site-header .brand-logo img{width:105px}
+ .site-header .nav-actions .phone-link{font-size:11px;padding:8px 6px}
+ .site-header .mobile-nav-menu>summary{padding:8px}
+}

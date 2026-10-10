@@ -819,3 +819,24 @@
  .site-header .nav-actions .phone-link{font-size:11px;padding:8px 6px}
  .site-header .mobile-nav-menu>summary{padding:8px}
 }
+
+/* ERA SOLAR MOBILE HEADER REFINEMENT 2026-10-10 */
+.header-phone-icon{display:inline-block;width:18px;height:18px;flex:0 0 18px;vertical-align:middle}
+@media(min-width:901px){.site-header .brand-logo img{width:205px;max-height:58px}.site-header .nav-wrap{min-height:80px;height:auto}}
+@media(max-width:640px){
+ .site-header .nav-wrap{min-height:72px;height:auto;gap:5px}
+ .site-header .brand{margin-right:auto;min-width:0}
+ .site-header .brand-logo img{width:155px !important;max-height:58px;object-fit:contain}
+ .site-header .nav-actions .phone-link{background:transparent !important;color:var(--navy) !important;box-shadow:none !important;border:0 !important;border-radius:0 !important;display:inline-flex !important;align-items:center;gap:5px;font-size:12px !important;font-weight:800;padding:8px 2px !important;min-height:44px}
+ .site-header .nav-actions .phone-link [data-phone-display]{font-size:12px !important}
+ .site-header .mobile-nav-menu>summary{min-height:44px}
+}
+@media(max-width:390px){
+ .site-header .brand-logo img{width:140px !important}
+ .site-header .nav-actions .phone-link [data-phone-display]{font-size:11px !important}
+ .site-header .mobile-nav-menu>summary{padding:7px !important}
+}
+@media(max-width:355px){
+ .site-header .brand-logo img{width:125px !important}
+ .site-header .nav-actions .phone-link [data-phone-display]{font-size:10px !important}
+}

@@ -884,3 +884,22 @@
  .pre-result .result-row,.pre-result .result-row b{font-size:16px!important}
  .pre-result p,.pre-result small{font-size:16px!important}
 }
+
+/* Solar Check V2 / STEP 3 — readable summary; explicitly target dynamically generated #preResult */
+#preResult.pre-result{padding:24px 26px!important}
+#preResult .result-label{display:block;font-size:16px!important;line-height:1.5!important;letter-spacing:.06em!important}
+#preResult h3{font-size:28px!important;line-height:1.35!important;margin:12px 0 18px!important}
+#preResult .result-row{font-size:20px!important;line-height:1.55!important;padding:13px 0!important;gap:16px!important}
+#preResult .result-row span,#preResult .result-row b{font-size:20px!important;line-height:1.55!important}
+#preResult p,#preResult p strong,#preResult small{font-size:19px!important;line-height:1.65!important}
+#preResult p{margin:17px 0 0!important}
+.form-step[data-step="3"]>.divider{font-size:15px!important;line-height:1.5!important;font-weight:700!important}
+@media(max-width:640px){
+ #preResult.pre-result{padding:18px!important}
+ #preResult .result-label{font-size:14px!important}
+ #preResult h3{font-size:23px!important;line-height:1.35!important}
+ #preResult .result-row{font-size:17px!important;padding:12px 0!important}
+ #preResult .result-row span,#preResult .result-row b{font-size:17px!important}
+ #preResult p,#preResult p strong,#preResult small{font-size:17px!important;line-height:1.6!important}
+ .form-step[data-step="3"]>.divider{font-size:13px!important}
+}

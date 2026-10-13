@@ -852,3 +852,22 @@
 .footer-brand-logo{display:block;line-height:0;max-width:100%}
 .footer-brand-logo img{display:block;width:300px;height:auto;max-width:100%;object-fit:contain;background:#fff;border-radius:6px;padding:6px}
 @media(max-width:640px){.footer-brand-logo img{width:230px;max-width:100%;height:auto;padding:5px}}
+
+/* Mobile hotline readability + consistent handset icons */
+@media(max-width:640px){
+ .site-header .nav-actions .phone-link{gap:5px!important;font-size:inherit!important;padding:7px 3px!important}
+ .site-header .nav-actions .phone-link [data-phone-display]{font-size:14px!important;font-weight:800!important;letter-spacing:-.45px;white-space:nowrap}
+ .site-header .nav-actions .phone-link .header-phone-icon{width:20px!important;height:20px!important;flex:0 0 20px!important}
+ .mobile-bar a:first-child{display:flex;align-items:center;justify-content:center;gap:7px}
+ .mobile-bar a:first-child .header-phone-icon{width:22px;height:22px;flex:0 0 22px}
+}
+@media(max-width:390px){
+ .site-header .brand-logo img{width:130px!important}
+ .site-header .nav-actions .phone-link [data-phone-display]{font-size:13px!important}
+ .site-header .mobile-nav-menu>summary{padding:7px!important}
+}
+@media(max-width:355px){
+ .site-header .brand-logo img{width:112px!important}
+ .site-header .nav-actions .phone-link [data-phone-display]{font-size:12px!important}
+ .site-header .nav-actions .phone-link .header-phone-icon{width:17px!important;height:17px!important;flex-basis:17px!important}
+}

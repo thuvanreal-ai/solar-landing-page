@@ -847,3 +847,8 @@
 @media(max-width:640px){.site-header .brand-logo img{width:155px!important;max-height:53px!important;height:auto!important;object-fit:contain!important}}
 @media(max-width:390px){.site-header .brand-logo img{width:140px!important}}
 @media(max-width:355px){.site-header .brand-logo img{width:125px!important}}
+
+/* ERA Solar official uploaded logo in footer, both device variants */
+.footer-brand-logo{display:block;line-height:0;max-width:100%}
+.footer-brand-logo img{display:block;width:300px;height:auto;max-width:100%;object-fit:contain;background:#fff;border-radius:6px;padding:6px}
+@media(max-width:640px){.footer-brand-logo img{width:230px;max-width:100%;height:auto;padding:5px}}

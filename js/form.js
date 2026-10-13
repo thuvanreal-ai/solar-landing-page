@@ -12,9 +12,26 @@ window.SolarLeadForm=(()=> {
     dots.forEach((d,i)=>d.classList.toggle('active',i<n));
     form.closest('.lead-card')?.scrollIntoView({behavior:'smooth',block:'center'});
   }
+  const billInput=form.elements.monthlyBill;
+  const parseBill=value=>Number(String(value??'').replace(/[^0-9]/g,''));
+  const formatBill=value=>parseBill(value)?new Intl.NumberFormat('vi-VN').format(parseBill(value)):'';
+  // Display Vietnamese thousands separators without changing numeric lead/calculator values.
+  billInput.addEventListener('input',()=>{
+    const start=billInput.selectionStart??billInput.value.length;
+    const digitsBefore=billInput.value.slice(0,start).replace(/[^0-9]/g,'').length;
+    billInput.value=formatBill(billInput.value);
+    let cursor=0,seen=0;
+    while(cursor<billInput.value.length&&seen<digitsBefore){
+      if(/[0-9]/.test(billInput.value[cursor]))seen++;
+      cursor++;
+    }
+    billInput.setSelectionRange(cursor,cursor);
+    billInput.setCustomValidity('');
+  });
+  billInput.addEventListener('blur',()=>{billInput.value=formatBill(billInput.value)});
   function money(v){return new Intl.NumberFormat('vi-VN').format(v)+' đ/tháng'}
   function validStep1(){
-    const input=form.elements.monthlyBill,value=Number(input.value);
+    const input=form.elements.monthlyBill,value=parseBill(input.value);
     if(!value||value<500000){
       input.focus();
       input.setCustomValidity('Vui lòng nhập tiền điện từ 500.000đ/tháng.');
@@ -36,7 +53,7 @@ window.SolarLeadForm=(()=> {
   }
   function renderLeadGate(){
     const data={
-      monthlyBill:Number(form.elements.monthlyBill.value),
+      monthlyBill:parseBill(form.elements.monthlyBill.value),
       propertyType:form.elements.propertyType.value,
       usageTime:form.elements.usageTime.value
     };
@@ -90,7 +107,7 @@ window.SolarLeadForm=(()=> {
     }
   }));
   form.querySelectorAll('.prev-step').forEach(btn=>btn.addEventListener('click',()=>showStep(Math.max(1,step-1))));
-  form.querySelectorAll('[data-bill]').forEach(btn=>btn.addEventListener('click',()=>{form.elements.monthlyBill.value=btn.dataset.bill}));
+  form.querySelectorAll('[data-bill]').forEach(btn=>btn.addEventListener('click',()=>{form.elements.monthlyBill.value=formatBill(btn.dataset.bill)}));
 
   function validatePhone(phone){return /^(0|\+84)(3|5|7|8|9)[0-9]{8}$/.test(phone.replace(/[\s.-]/g,''))}
 
@@ -119,7 +136,7 @@ window.SolarLeadForm=(()=> {
     }
 
     const data={
-      monthlyBill:Number(form.elements.monthlyBill.value),
+      monthlyBill:parseBill(form.elements.monthlyBill.value),
       propertyType:form.elements.propertyType.value,
       usageTime:form.elements.usageTime.value
     };

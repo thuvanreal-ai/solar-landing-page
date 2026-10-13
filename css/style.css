@@ -840,3 +840,10 @@
  .site-header .brand-logo img{width:125px !important}
  .site-header .nav-actions .phone-link [data-phone-display]{font-size:10px !important}
 }
+
+/* ERA Solar: uploaded original PNG artwork for desktop/mobile */
+@media(min-width:901px){.site-header .brand-logo img{width:205px!important;max-height:68px!important;height:auto!important}}
+@media(min-width:641px) and (max-width:900px){.site-header .brand-logo img{width:175px!important;height:auto!important}}
+@media(max-width:640px){.site-header .brand-logo img{width:155px!important;max-height:53px!important;height:auto!important;object-fit:contain!important}}
+@media(max-width:390px){.site-header .brand-logo img{width:140px!important}}
+@media(max-width:355px){.site-header .brand-logo img{width:125px!important}}

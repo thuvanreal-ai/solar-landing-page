@@ -19,5 +19,15 @@
     else heroVideo.addEventListener('canplay', startHeroVideo, { once: true });
     document.addEventListener('visibilitychange', () => { if (!document.hidden && heroVideo.paused) startHeroVideo(); });
   }
-  document.querySelectorAll('[data-track]').forEach(el => el.addEventListener('click', () => window.SolarTracking?.event('cta_click', { placement: el.dataset.track })));
+  document.querySelectorAll('a[href^="tel:"], a[data-phone-link], a[data-zalo-link]').forEach(el => el.addEventListener('click', () => {
+    const isZalo = el.hasAttribute('data-zalo-link');
+    window.SolarTracking?.event(isZalo ? 'click_zalo' : 'click_to_call', {
+      placement: el.dataset.track || (el.closest('footer') ? 'footer' : el.closest('header') ? 'header' : 'page'),
+      contact_method: isZalo ? 'zalo' : 'phone'
+    });
+  }));
+  document.querySelectorAll('[data-track]').forEach(el => {
+    if (el.matches('a[href^="tel:"], a[data-phone-link], a[data-zalo-link]')) return;
+    el.addEventListener('click', () => window.SolarTracking?.event('cta_click', { placement: el.dataset.track }));
+  });
 })();

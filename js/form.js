@@ -5,6 +5,7 @@ window.SolarLeadForm=(()=> {
   const dots=[...document.querySelectorAll('.progress span')];
   const status=document.getElementById('formStatus');
   let step=1;
+  let submitting=false;
 
   function showStep(n){
     step=n;
@@ -138,6 +139,8 @@ window.SolarLeadForm=(()=> {
 
   form.addEventListener('submit',e=>{
     e.preventDefault();
+    // Prevent duplicate requests from double clicks / repeated submit events.
+    if(submitting)return;
     const name=form.elements.name.value.trim();
     const phone=form.elements.phone.value.trim();
     if(!name){
@@ -173,12 +176,14 @@ window.SolarLeadForm=(()=> {
     payload.set('source','Solar Check V2');
     attachAttribution(payload);
 
+    submitting=true;
     const submit=document.getElementById('submitLead');
     submit.disabled=true;
     submit.textContent='Đang mở kết quả...';
 
     sendLead(endpoint,payload);
-    try{window.SolarTracking?.leadSuccess()}catch(_){}
+    // sendBeacon/no-cors cannot prove CRM persistence; track attempt only.
+    try{window.SolarTracking?.leadAttempt()}catch(_){}
     window.location.replace(resultUrl(result,data));
   });
   return{showStep};

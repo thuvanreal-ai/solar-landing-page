@@ -1,0 +1,22 @@
+name: Isolated ERA Solar UTM test
+on:
+  push:
+    branches:
+      - feature/utm-lead-tracking-20261029
+    paths:
+      - 'js/form.js'
+      - 'tests/utm-form.integration.cjs'
+      - '.github/workflows/utm-isolated-test.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node --check js/form.js
+      - run: node tests/utm-form.integration.cjs

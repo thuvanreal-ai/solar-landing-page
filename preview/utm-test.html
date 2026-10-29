@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>ERA Solar — UTM isolated preview</title>
+<style>body{font:16px Arial,sans-serif;background:#eef5f9;color:#163047;margin:0;padding:24px}.wrap{max-width:660px;margin:auto}.card{background:white;border-radius:14px;padding:24px;margin:14px 0;box-shadow:0 2px 14px #0001}.form-step{display:none}.form-step.active{display:block}input{padding:12px;max-width:100%;box-sizing:border-box;margin:8px 0}button{padding:12px 18px;cursor:pointer;margin:8px 4px 8px 0;background:#087eaa;color:white;border:0;border-radius:7px}label{display:block;margin-top:10px}fieldset{margin:15px 0}.error{color:#b00020}.progress span{display:inline-block;width:30px;height:5px;background:#bbb;margin:4px}.progress span.active{background:#087eaa}code{overflow-wrap:anywhere}</style>
+</head><body><main class="wrap"><h1>ERA Solar — Kiểm thử lớp 2</h1><p><strong>MÔI TRƯỜNG CÔ LẬP.</strong> Không gửi dữ liệu đến Apps Script hay Google Sheet thật. Dùng dữ liệu giả.</p>
+<div class="card"><p>Để thử UTM, mở trang này với URL có <code>?utm_source=google&amp;utm_medium=cpc&amp;utm_campaign=era_test&amp;utm_term=thi_cong_solar&amp;utm_content=ad01&amp;gclid=TEST123</code>.</p><p id="testSafety">Đang khởi tạo...</p></div>
+<div class="card lead-card" id="kiem-tra"><form id="solarCheckForm" novalidate>
+<div class="form-step active" data-step="1"><label>Tiền điện/tháng <input name="monthlyBill" id="monthlyBill" value="5.000.000"></label><button type="button" data-bill="5000000">5 triệu</button><button class="next-step" type="button">Tiếp tục</button></div>
+<div class="form-step" data-step="2"><fieldset><legend>Loại công trình</legend><label><input type="radio" name="propertyType" value="Nhà ở" checked> Nhà ở</label><label><input type="radio" name="propertyType" value="Nhà xưởng"> Nhà xưởng</label></fieldset><fieldset><legend>Thời gian dùng điện</legend><label><input type="radio" name="usageTime" value="Ban ngày" checked> Ban ngày</label><label><input type="radio" name="usageTime" value="Ban đêm"> Ban đêm</label></fieldset><button class="prev-step" type="button">Quay lại</button><button class="next-step" type="button">Tiếp tục</button></div>
+<div class="form-step" data-step="3"><div id="preResult"></div><label>Tên thử nghiệm <input name="name" value="TEST UTM ERA"></label><label>Điện thoại giả lập hợp lệ <input name="phone" value="0912345678"></label><input type="hidden" name="source" value="Solar Check V2"><button id="submitLead" type="submit">Gửi thử nghiệm</button><div id="formStatus"></div></div>
+</form><div class="progress"><span class="active"></span><span></span><span></span></div></div>
+</main>
+<script>
+window.SOLAR_CONFIG={leadEndpoint:'https://example.invalid/era-utm-isolated-test'};
+window.SolarTracking={event(){},leadSuccess(){}};
+window.__testCapture=[];
+Object.defineProperty(navigator,'sendBeacon',{configurable:true,value:()=>false});
+window.fetch=function(url,options){
+  if(url!==window.SOLAR_CONFIG.leadEndpoint)throw Error('Unexpected endpoint blocked');
+  const payload=Object.fromEntries(new URLSearchParams(options.body).entries());
+  sessionStorage.setItem('era_solar_preview_last_payload',JSON.stringify(payload));
+  window.__testCapture.push(payload);
+  return Promise.resolve({ok:true});
+};
+document.getElementById('testSafety').textContent='Chế độ giả lập: sendBeacon bị vô hiệu; fetch chỉ ghi dữ liệu vào sessionStorage của trình duyệt, không gửi qua mạng.';
+</script>
+<script src="../js/calculator.js"></script><script src="../js/form.js"></script>
+</body></html>

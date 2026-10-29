@@ -78,6 +78,31 @@ window.SolarLeadForm=(()=> {
     });
     return 'thank-you.html?'+q.toString();
   }
+  // Attribution is captured at page entry and retained across form steps.
+  // No personal details are stored in attribution storage.
+  const attributionKeys=['utm_source','utm_medium','utm_campaign','utm_term','utm_content','gclid'];
+  const attributionStorageKey='era_solar_attribution_v1';
+  function readAttribution(){
+    let saved={};
+    try{saved=JSON.parse(sessionStorage.getItem(attributionStorageKey)||'{}')||{}}catch(_){}
+    const query=new URLSearchParams(window.location.search);
+    let updated=false;
+    for(const key of attributionKeys){
+      if(query.has(key)){
+        saved[key]=String(query.get(key)||'').slice(0,500);
+        updated=true;
+      }
+    }
+    if(updated){try{sessionStorage.setItem(attributionStorageKey,JSON.stringify(saved))}catch(_){}}
+    return saved;
+  }
+  const attribution=readAttribution();
+  function attachAttribution(payload){
+    for(const key of attributionKeys){
+      if(attribution[key])payload.set(key,attribution[key]);
+    }
+  }
+
   function sendLead(endpoint,payload){
     const params=new URLSearchParams();
     for(const [key,value] of payload.entries())params.append(key,String(value));
@@ -146,6 +171,7 @@ window.SolarLeadForm=(()=> {
     payload.set('phone',phone);
     payload.set('monthlyBill',String(data.monthlyBill));
     payload.set('source','Solar Check V2');
+    attachAttribution(payload);
 
     const submit=document.getElementById('submitLead');
     submit.disabled=true;

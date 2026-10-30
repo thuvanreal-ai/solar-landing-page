@@ -6,6 +6,12 @@ window.SolarLeadForm=(()=> {
   const status=document.getElementById('formStatus');
   let step=1;
   let submitting=false;
+  let pendingRequestId=null;
+  function makeRequestId(){
+    if(window.crypto?.randomUUID)return window.crypto.randomUUID();
+    // Fallback for older browsers; do not use personal data as a request identifier.
+    return 'era_'+Date.now().toString(36)+'_'+Math.random().toString(36).slice(2,14);
+  }
 
   function showStep(n){
     step=n;
@@ -175,6 +181,8 @@ window.SolarLeadForm=(()=> {
     payload.set('monthlyBill',String(data.monthlyBill));
     payload.set('source','Solar Check V2');
     attachAttribution(payload);
+    pendingRequestId=pendingRequestId||makeRequestId();
+    payload.set('requestId',pendingRequestId);
 
     submitting=true;
     const submit=document.getElementById('submitLead');

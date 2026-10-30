@@ -29,5 +29,6 @@ assert.equal(calls[2].redirect.startsWith('thank-you.html?'),true);
  assert.equal(params.get('phone'),'0912345678');
  assert.equal(params.get('monthlyBill'),'5000000');
  assert.equal(params.get('gclid'),'TEST_GCLID_001');
+ assert.match(params.get('requestId'),/^[A-Za-z0-9_-]{12,128}$/);
  console.log('PASS: actual form.js captured 6 attribution fields, preserved lead data, and used isolated endpoint.');
 })().catch(e=>{console.error(e);process.exitCode=1});
